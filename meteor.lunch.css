@@ -93,7 +93,7 @@ body {
   position: relative;
   background:rgba(0,0,0,0.9);
 }
-#submit { 
+.submit { 
   display: block;
   width: 75%;
   padding: .4rem;
@@ -106,7 +106,7 @@ body {
   cursor: pointer;
   transition: .3s background;
 }
-#submit:hover { 
+.submit:hover { 
    position: relative;
    background: rgba(0,0,0,0.5);
    bottom:-1px;
@@ -123,4 +123,8 @@ body {
     text-shadow: 1px 1px grey, 
                 2px 2px grey, 
                 3px 3px grey;   
+}
+
+#logo {
+     text-shadow: 3px 1px black;
 }

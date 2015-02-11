@@ -24,7 +24,6 @@
     {{/if}}
 </body>
 
-<<<<<<< HEAD
 <!-- Login Page Title -->
 <template name="title">
     <h1 class="title">f.Lunch</h1>
@@ -36,36 +35,26 @@
         <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
         <source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
     </video>
-=======
+</template>   
+
 <!-- User Auth View -->
+<!-- User Register Form -->
 <template name="register">
-<form class="register" align="center">
-  <h1> Sign Up </h1>
-    <input type="email" id="register-email" placeholder="email">
-    <input type="password" id="register-password" placeholder="password">
-    <input type="submit" value="Register" id="submit">
-</form>
->>>>>>> FETCH_HEAD
+    <form class="register" align="center">
+      <h1> Sign Up </h1>
+        <input type="email" id="register-email" placeholder="email">
+        <input type="password" id="register-password" placeholder="password">
+        <input type="submit" value="Register" id="submit" class="submit">
+    </form>
 </template>
 
 <!-- Login Form -->
 <template name="login">
     <form class="login" align="center">
-        <h1 class="signIn"> Sign In </h1>
+        <h1> Sign In </h1>
         <input type="email" id="login-email" placeholder="email">
         <input type="password" id="login-password" placeholder="password">
-        <input type="submit" value="Login" id="submit">
-    </form>
-</template>
-
-<<<<<<< HEAD
-<!-- User Register Form -->
-<template name="register">
-    <form class="register" align="center">
-        <h1 class="signIn"> Sign Up </h1>
-        <input type="email" id="register-email" placeholder="email">
-        <input type="password" id="register-password" placeholder="password">
-        <input type="submit" value="Register" id="submit">
+        <input type="submit" value="Login" id="submit" class="submit">
     </form>
 </template>
 
@@ -74,9 +63,9 @@
     <div class="navbar-fixed">
         <nav class="grey darken-3">
             <div class="nav-wrapper">
-                <a href="#home " class="brand-logo active">f.<b>lunch</b></a>
+                <a href="#home " class="brand-logo white-text">f.<b>lunch</b></a>
                 <ul id="nav-mobile" class="right side-nav">
-                    <li class="hide-on-med-and-down"><a href="#create">Create</a></li>
+                    <li class="create"><a href="#create">Create</a></li>
                     <li><a href="#vote" >Vote</a></li>
                     <li><a href="#order">Order</a></li>
                     <li><a href="#logout" class="logout">Logout</a></li>
@@ -93,15 +82,15 @@
 <template name="splash">
     <div class="scrollspy" id="home">
         <div id="index-banner" class="parallax-container">
-            <div class="parallax"><img src="http://2.bp.blogspot.com/-aIUociN0uno/TkJ_QBp36cI/AAAAAAAAAoI/W33XIy8jEBU/s1600/montes-black-white.jpg" alt="Unsplashed background img 2"></div>
+            <div class="parallax"><img src="https://gigaom2.files.wordpress.com/2012/09/shutterstock_92522029-e1347738681645.jpg" alt="Unsplashed background img 2"></div>
             <div class="container">
-                <h1 class="header center white-text" style="text-shadow: text-shadow: 1px 1px grey, 2px 2px grey, 3px 3px grey;">Fuzz Lunch</h1>
+                <h1 class="header center grey-text text-lighten-2">Fuzz Lunch</h1>
                 <div class="row center">
-                    <h2 class="center"><i class="large mdi-maps-local-restaurant red-text accent-2"></i></h2>
+                    <h2 class="center"><i class="large mdi-maps-local-restaurant grey-text text-darken-4" id="logo"></i></h2>
                 </div>
                 <div class="row center">
     <!--replace href with signin view -->
-                    <a id="download-button" href="#create" class="btn-large waves-effect waves-light grey lighten-1">Get Started</a>
+                    <a id="start-button" href="#create" class="btn-large waves-effect waves-light blue lighten-2" >Get Started</a>
                 </div>
             </div>
         </div>
@@ -115,7 +104,7 @@
             <div class="row">
                 <div class="col s12">
                     <div class="icon-block">
-                        <h2 class="center black-text"><i class="mdi-image-flash-on"></i></h2>
+                        <h2 class="center black-text"><i class="mdi-image-flash-on blue-grey-text text-darken-3"></i></h2>
                         <h5 class="flow-text center-align"><b>Team-Lunch Made To Order</b></h5>
                         <p class="flow-text light center-align">Fuzz Lunch is a modern web application created to streamline team-lunch ordering. Efficient workflow is achieved through increased accessibility, in virtue of, enhanced visibility & simplistic design.</p>
                     </div>
@@ -129,7 +118,7 @@
 <template name="contact">
     <form id="contact" class="section center">
          <div class="input-field col s6 offset-s3">
-                <i class="mdi-communication-email prefix"></i>
+                <i class="mdi-social-person prefix"></i>
             <input type="text" name="name" id="nameSend" class="validate">
                 <label for="name">Name</label>
         </div>
@@ -144,7 +133,7 @@
                 <label for="message">Message</label>
         </div>
         <div class="input-field col s4 offset-s4">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>
+            <button class="btn blue lighten-2 waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>
         </div>
     </form>
 </template>
@@ -157,7 +146,7 @@
         <div class="section scrollspy">
             <div class="row">
                 <div class="col s12 center">
-                    <h4 class="flow-text"><b>Create Run</b></h4>
+                    <h2 class="flow-text">Cr<u>eate R</u>un</h2>
                 </div>
             </div>
             <div class="row">
@@ -173,64 +162,130 @@
 <!-- Attach Quick-View Cards -->
 <template name="vote">
     <div class="divider"></div>
-    <div class="container" id="vote">
+    <div class="container" id="order">
         <div class="section scrollspy">
-            <ul class="collapsible" data-collapsible="accordion">
-                <li>
-                    <div class="collapsible-header"><i class="mdi-maps-store-mall-directory"></i>Asian</div>
-                    <div class="collapsible-body"> 
-                        <div class="collection">
-                            <a href="#!" class="collection-item">Osaka</a>
-                            <a href="#!" class="collection-item">Zen</a>
-                            <a href="#!" class="collection-item">Thai Garden</a>
-                            <a href="#!" class="collection-item">India Palace</a>
+          <div class="col s12 center">
+                <h2 class="flow-text">V<u>ot</u>e</h2>
+            </div>
+            <div class="col s5">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"><i class="mdi-maps-store-mall-directory"></i>Asian</div>
+                        <div class="collapsible-body"> 
+                            <div class="collection">
+                                <a href="#!" class="collection-item">Osaka</a>
+                                <a href="#!" class="collection-item">Zen</a>
+                                <a href="#!" class="collection-item">Thai Garden</a>
+                                <a href="#!" class="collection-item">India Palace</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="mdi-maps-local-cafe"></i>Deli & Cafe</div>
-                    <div class="collapsible-body"> 
-                        <div class="collection">
-                            <a href="#!" class="collection-item">Serio's<span class="badge"><i class="mdi-maps-local-shipping"></i></span></a>
-                            <a href="#!" class="collection-item">The Roost</a>
-                            <a href="#!" class="collection-item">Sip</a>
-                            <a href="#!" class="collection-item">Amanouz Cafe</a>
-                            <a href="#!" class="collection-item">The Quarry Cafe</a>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="mdi-maps-local-cafe"></i>Deli & Cafe</div>
+                        <div class="collapsible-body"> 
+                            <div class="collection">
+                                <a href="#!" class="collection-item">Serio's<span class="badge"><i class="mdi-maps-local-shipping"></i></span></a>
+                                <a href="#!" class="collection-item">The Roost</a>
+                                <a href="#!" class="collection-item">Sip</a>
+                                <a href="#!" class="collection-item">Amanouz Cafe</a>
+                                <a href="#!" class="collection-item">The Quarry Cafe</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Mexican</div>
-                    <div class="collapsible-body">
-                        <div class="collection">
-                        <a href="#!" class="collection-item">Bueno y Sano</a>
-                        <a href="#!" class="collection-item">La Vera Cruzana</a>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Mexican</div>
+                        <div class="collapsible-body">
+                            <div class="collection">
+                                <a href="#!" class="collection-item">Bueno y Sano</a>
+                                <a href="#!" class="collection-item">La Vera Cruzana</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="mdi-maps-local-pizza"></i>Italian & Greek</div>
-                    <div class="collapsible-body"> 
-                        <div class="collection">
-                            <a href="#!" class="collection-item">Viva Fresh Pasta Co.</a>
-                            <a href="#!" class="collection-item ">Filos Taverna<span class="badge"><i class="mdi-maps-local-shipping"></i></span></a>
-                            <a href="#!" class="collection-item">Sam's Pizza<span class="badge"><i class="mdi-maps-local-shipping"></i></span></a>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="mdi-maps-local-pizza"></i>Italian & Greek</div>
+                        <div class="collapsible-body"> 
+                            <div class="collection">
+                                <a href="#!" class="collection-item">Viva Fresh Pasta Co.</a>
+                                <a href="#!" class="collection-item ">Filos Taverna<span class="badge"><i class="mdi-maps-local-shipping"></i></span></a>
+                                <a href="#!" class="collection-item">Sam's Pizza<span class="badge"><i class="mdi-maps-local-shipping"></i></span></a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="mdi-action-favorite-outline"></i>Local Favorites</div>
-                    <div class="collapsible-body"> 
-                        <div class="collection">
-                            <a href="#!" class="collection-item">Paul & Elizabeth's</a>
-                            <a href="#!" class="collection-item">The Green Bean</a>
-                            <a href="#!" class="collection-item">Local Burger</a>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="mdi-action-favorite-outline"></i>Local Favorites</div>
+                        <div class="collapsible-body"> 
+                            <div class="collection">
+                                <a href="#!" class="collection-item">Paul & Elizabeth's</a>
+                                <a href="#!" class="collection-item">The Green Bean</a>
+                                <a href="#!" class="collection-item">Local Burger</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+                        <!-- Voting Form -->
+                        <div class="col s6">
+                            <div class="card-panel white">
+                                <h5 class="center-align grey-text">Your Picks</h5>
+                                <form action="#">
+                                    <p>
+                                        <input type="checkbox" id="test5"/>
+                                        <label for="test5">choice 1</label>
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" id="test6"/>
+                                        <label for="test6">choice 2</label>
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" id="test7"/>
+                                        <label for="test7">choice 3</label>
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" id="test8"/>
+                                        <label for="test8">choice 4</label>
+                                     </p>
+                                </form>
+                            </div>
+                 </div>
+            </div>
         </div>
     </div>
+</template>
+
+<!-- Order Template -->
+<template name="order">
+    <div class="divider"></div>
+                <div class="row">
+                    <div class="section">
+                        <div class="col s6">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="http://www.healthyorganicwoman.com/wp-content/uploads/2013/10/cappuccino-cup.jpg"> 
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Order <i class="mdi-navigation-more-vert right"></i></span>
+                                    <p>Winning Restaurant:<a href="#">placeholder</a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4 center-align">Order <i class="mdi-navigation-close right"></i></span>
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="mdi-action-account-circle prefix"></i>
+                                                <input id="icon_prefix" type="text" class="validate">
+                                                <label for="icon_prefix">First Name</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <i class="mdi-communication-phone prefix"></i>
+                                                <input id="icon_telephone" type="tel" class="validate">
+                                                <label for="icon_telephone">Telephone</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </template>
 
 <!-- Insert Check Mark Voting Form --> 
@@ -240,7 +295,7 @@
         <div class="container">
             <div class="row center">
                 <div class="col s12">
-                    <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Fuzz Productions, LLC" href="https://fuzzproductions.com/">Who Are We</a>
+                    <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Fuzz Productions, LLC" href="https://fuzzproductions.com/">Who We Are</a>
                 </div>
             </div>
         </div>
@@ -271,23 +326,3 @@
         });
     </script>
 </template>
-=======
-<template name="video">
-<video class="video" autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
-  <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
-  <source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
-</video>
-</template>
-
-<!-- Logged In User View -->
-<template name="dashboard">
-<core-header-panel>
-  <p>Welcome!</p>
-  <p><a href="#" class="logout">Logout</a></p>
-</core-header-panel>
-</template>
-
-<template name="home">
- <!--Main page of App -->
-</template>
->>>>>>> FETCH_HEAD
