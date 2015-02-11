@@ -1,55 +1,261 @@
 <head>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"/>
-  <script src="public/bower_components/webcomponentsjs/webcomponents.js"/>
-  <link rel="SHORTCUT ICON" href="public/favicon.ico"/>
-  <title>Lunch</title>
-  <link rel="import" href="public/imports.html"/>
+    <link rel="shortcut icon" href="http://drzioeqvwiaw7.cloudfront.net/assets/img/favicon.ico"/>
+<title>Lunch</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"/>
+    <stylesheet href="public/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <stylesheet href="public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href='http://fonts.googleapis.com/css?family=Advent+Pro:600' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
     {{#if currentUser}}
-       {{> dashboard}}
+        {{> nav}}
+        {{> splash}}
+        {{> icon}}
+        {{> create}}
+        {{> vote}}
+        {{> footer}}
+        {{> scripts}}
     {{else}}
+        {{> title}}
         {{> video}}
-        {{> register}}
         {{> login}}
+        {{> register}}
     {{/if}}
 </body>
 
-<!-- User Auth View -->
-<template name="register">
-<form class="register" align="center">
-<h1> Sign Up </h1>
-    <input type="email" id="register-email" placeholder="email">
-    <input type="password" id="register-password" placeholder="password">
-    <input type="submit" value="Register" id="submit">
-</form>
+<!-- Login Page Title -->
+<template name="title">
+    <h1 class="title">f.Lunch</h1>
 </template>
 
-<template name="login">
-<form class="login" align="center">
-<h1> Sign In </h1>
-    <input type="email" id="login-email" placeholder="email">
-    <input type="password" id="login-password" placeholder="password">
-    <input type="submit" value="Login" id="submit">
-</form>
-</template>
-
+<!-- Video Background -->
 <template name="video">
-<video class="video" autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
-<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
-<source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
-</video>
+    <video autoplay  class="video" poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
+        <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
+        <source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
+    </video>
+</template>
+
+<!-- Login Form -->
+<template name="login">
+    <form class="login" align="center">
+        <h1 class="signIn"> Sign In </h1>
+        <input type="email" id="login-email" placeholder="email">
+        <input type="password" id="login-password" placeholder="password">
+        <input type="submit" value="Login" id="submit">
+    </form>
+</template>
+
+<!-- User Register Form -->
+<template name="register">
+    <form class="register" align="center">
+        <h1 class="signIn"> Sign Up </h1>
+        <input type="email" id="register-email" placeholder="email">
+        <input type="password" id="register-password" placeholder="password">
+        <input type="submit" value="Register" id="submit">
+    </form>
 </template>
 
 <!-- Logged In User View -->
-<template name="dashboard">
-    <core-header-panel>
-    <p>Welcome!</p>
-    <p><a href="#" class="logout">Logout</a></p>
-    </core-header-panel>
+<template name="nav">
+    <div class="navbar-fixed">
+        <nav class="grey darken-3">
+            <div class="nav-wrapper">
+                <a href="#home " class="brand-logo active">f.<b>lunch</b></a>
+                <ul id="nav-mobile" class="right side-nav">
+                    <li class="hide-on-med-and-down"><a href="#create">Create</a></li>
+                    <li><a href="#vote" >Vote</a></li>
+                    <li><a href="#order">Order</a></li>
+                    <li><a href="#logout" class="logout">Logout</a></li>
+                </ul>
+                <!-- Include this line below -->
+                <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+                <!-- End -->
+            </div>
+        </nav>
+    </div>
 </template>
 
-<template name="home">
- <!--Main page of App -->
+<!-- Splash Page -->
+<template name="splash">
+    <div class="scrollspy" id="home">
+        <div id="index-banner" class="parallax-container">
+            <div class="parallax"><img src="http://2.bp.blogspot.com/-aIUociN0uno/TkJ_QBp36cI/AAAAAAAAAoI/W33XIy8jEBU/s1600/montes-black-white.jpg" alt="Unsplashed background img 2"></div>
+            <div class="container">
+                <h1 class="header center white-text" style="text-shadow: text-shadow: 1px 1px grey, 2px 2px grey, 3px 3px grey;">Fuzz Lunch</h1>
+                <div class="row center">
+                    <h2 class="center"><i class="large mdi-maps-local-restaurant red-text accent-2"></i></h2>
+                </div>
+                <div class="row center">
+    <!--replace href with signin view -->
+                    <a id="download-button" href="#create" class="btn-large waves-effect waves-light grey lighten-1">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+</template>
+
+<!--   Icon Section   -->
+<template name="icon">
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12">
+                    <div class="icon-block">
+                        <h2 class="center black-text"><i class="mdi-image-flash-on"></i></h2>
+                        <h5 class="flow-text center-align"><b>Team-Lunch Made To Order</b></h5>
+                        <p class="flow-text light center-align">Fuzz Lunch is a modern web application created to streamline team-lunch ordering. Efficient workflow is achieved through increased accessibility, in virtue of, enhanced visibility & simplistic design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</template>
+
+<!-- Email Template -->
+<template name="contact">
+    <form id="contact" class="section center">
+         <div class="input-field col s6 offset-s3">
+                <i class="mdi-communication-email prefix"></i>
+            <input type="text" name="name" id="nameSend" class="validate">
+                <label for="name">Name</label>
+        </div>
+        <div class="input-field col s6 offset-s3">
+                <i class="mdi-communication-email prefix"></i>
+            <input type="email" name="email" id="emailSend" class="validate">
+                <label for="email">Email</label>
+        </div>
+        <div class="input-field col s6 offset-s3">
+                <i class="mdi-editor-mode-edit prefix"></i>
+            <textarea class="materialize-textarea" id="messageSend"></textarea>
+                <label for="message">Message</label>
+        </div>
+        <div class="input-field col s4 offset-s4">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>
+        </div>
+    </form>
+</template>
+                    
+<!-- Email Form -->
+<!-- Hookup Email -->
+<template name="create">
+    <div class="divider"></div>
+    <div class="container" id="create" >
+        <div class="section scrollspy">
+            <div class="row">
+                <div class="col s12 center">
+                    <h4 class="flow-text"><b>Create Run</b></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="section">
+                    {{> contact}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- Rest. Index -->
+<!-- Attach Quick-View Cards -->
+<template name="vote">
+    <div class="divider"></div>
+    <div class="container" id="vote">
+        <div class="section scrollspy">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="mdi-maps-store-mall-directory"></i>Asian</div>
+                    <div class="collapsible-body"> 
+                        <div class="collection">
+                            <a href="#!" class="collection-item">Osaka</a>
+                            <a href="#!" class="collection-item">Zen</a>
+                            <a href="#!" class="collection-item">Thai Garden</a>
+                            <a href="#!" class="collection-item">India Palace</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="mdi-maps-local-cafe"></i>Deli & Cafe</div>
+                    <div class="collapsible-body"> 
+                        <div class="collection">
+                            <a href="#!" class="collection-item">Serio's<span class="badge"><i class="mdi-maps-local-shipping"></i></span></a>
+                            <a href="#!" class="collection-item">The Roost</a>
+                            <a href="#!" class="collection-item">Sip</a>
+                            <a href="#!" class="collection-item">Amanouz Cafe</a>
+                            <a href="#!" class="collection-item">The Quarry Cafe</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Mexican</div>
+                    <div class="collapsible-body">
+                        <div class="collection">
+                        <a href="#!" class="collection-item">Bueno y Sano</a>
+                        <a href="#!" class="collection-item">La Vera Cruzana</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="mdi-maps-local-pizza"></i>Italian & Greek</div>
+                    <div class="collapsible-body"> 
+                        <div class="collection">
+                            <a href="#!" class="collection-item">Viva Fresh Pasta Co.</a>
+                            <a href="#!" class="collection-item ">Filos Taverna<span class="badge"><i class="mdi-maps-local-shipping"></i></span></a>
+                            <a href="#!" class="collection-item">Sam's Pizza<span class="badge"><i class="mdi-maps-local-shipping"></i></span></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="mdi-action-favorite-outline"></i>Local Favorites</div>
+                    <div class="collapsible-body"> 
+                        <div class="collection">
+                            <a href="#!" class="collection-item">Paul & Elizabeth's</a>
+                            <a href="#!" class="collection-item">The Green Bean</a>
+                            <a href="#!" class="collection-item">Local Burger</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<!-- Insert Check Mark Voting Form --> 
+<!-- Footer -->
+<template name="footer">
+    <footer class="page-footer black">
+        <div class="container">
+            <div class="row center">
+                <div class="col s12">
+                    <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Fuzz Productions, LLC" href="https://fuzzproductions.com/">Who Are We</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright center">
+            <div class="container">
+                <a class="flow-text grey-text" href="https://fuzzproductions.com"></a>
+            </div>
+        </div>
+    </footer>
+</template>
+
+<!--  Scripts-->
+<template name="scripts">
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="public/js/materialize.js"></script>
+    <script src="public/js/init.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.parallax').parallax();
+            $(".button-collapse").sideNav();
+            $(".dropdown-button").dropdown();
+            $('.scrollspy').scrollSpy();
+            $('ul.tabs').tabs();
+            $('.tooltipped').tooltip({delay: 50});
+            $('.collapsible').collapsible({
+                accordion : true
+            });
+        });
+    </script>
 </template>

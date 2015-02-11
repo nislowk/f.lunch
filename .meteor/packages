@@ -10,10 +10,11 @@ insecure
 accounts-password
 accounts-base
 accounts-ui
-minimongo
 force-ssl
 autoupdate
 mdg:geolocation
 mdg:reload-on-resume
 mdg:camera
 jquery
+d0minikk:materialize-meteor
+email

@@ -1,46 +1,101 @@
 body {
-    overflow: hidden;
 }
 .video { 
   position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
   width: auto;
   height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  right: 0;
+  bottom: 0;
   z-index: -100;
-  background: url('/public/food.jpg') no-repeat;
+  background-image: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
   background-size: cover;
-  transition: 1s opacity;
   object-fit: contain;
+  transition: 1s opacity;
 }
 .register, .login { 
+  display: block;
+  width: 25%;
+  height: 25%;
+  padding: .4rem;
+  margin: 1rem auto;
   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-size: 1.2rem;
   font-weight:100; 
   background: rgba(0,0,0,0.3);
-  box-shadow: 5px 5px rgba(0,0,0,0.5);
-  position: fixed;
-  right: 0;
-  left:35px;
-  font-size: 1.2rem;
-  height: 40%;
-  width: 75%;
-  position: relative;
-  padding: 2rem;
-  margin: 7rem;
+  box-shadow: 3px 3px 0px rgba(0,0,0,0.2);
 }
-h1 {
+.register:hover , .login:hover {
+    top: -1px;
+    position: relative;
+    box-shadow: 3px 3px 2px black,
+                6px 6px 3px rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.2); 
+}
+.signIn {
   font-size: 3rem;
   text-transform: uppercase;
   margin-top: 0;
   letter-spacing: .3rem;
   text-align: center;
   color: white;
+   text-shadow: 1px 1px grey, 
+                2px 2px grey, 
+                3px 3px grey;
+   -webkit-transition: all 0.12s ease-out;
+   -moz-transition:    all 0.12s ease-out;
+   -ms-transition:     all 0.12s ease-out;
+   -o-transition:      all 0.12s ease-out;
+}
+.signIn:hover {
+   position: relative; 
+   top: -1px; 
+}
+.title {
+ display: block;
+ font-size: 5rem;
+ text-transform:lowercase;
+ font-family: 'Advent Pro', sans-serif;
+ opacity: 0.85;
+ color: #2b0042;
+ text-align: center;
+ position: relative;
+  width: 20%;
+  height: 20%;
+  padding: .4rem;
+  margin: 1rem auto;
+ text-shadow: 3px 0px 1px #ff5252,
+               -3px 0px 0px #448aff ;
+}
+.title:hover {
+  text-shadow: -3px -3px 0px #ff5252,
+             3px 3px 1px #448aff ;
+}
+.signIn input {
+  font-family: 'Muli', sans-serif;
+  font-size: 15px;
+  height: 4%;
+  width: 90%;
+  display: block;
+  background:rgba(0,0,0,0.5);
+  opacity: 0.7;
+  padding: .8rem;
+  margin-bottom: .5rem;
+  transition: .6s background;
+  color: white;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+}
+.signIn input:hover{
+  position: relative;
+  background:rgba(0,0,0,0.9);
 }
 #submit { 
   display: block;
-  width: 80%;
+  width: 75%;
   padding: .4rem;
   border: none; 
   margin: 1rem auto; 
@@ -52,28 +107,20 @@ h1 {
   transition: .3s background;
 }
 #submit:hover { 
+   position: relative;
    background: rgba(0,0,0,0.5);
-}
-input {
-  font-family: 'Muli', sans-serif;
-  height: 4%;
-  width: 45%;
-  display: inline-block;
-  background:rgba(0,0,0,0.5);
-  opacity: 0.7;
-  padding: .5rem;
-  transition: .6s background;
-  color: gold;
-  align-content: center;
-  
-}
-input:hover{
-  background:rgba(0,0,0,0.9);
+   bottom:-1px;
 }
 @media screen and (max-width: 500px) { 
   div{width:70%;} 
 }
 @media screen and (max-device-width: 800px) {
-  html { background: url(/public/food.jpg) #000 no-repeat center center fixed; }
+  html { background: url('//demosthenes.info/assets/images/polina.jpg') #000 no-repeat center center fixed; }
   #bgvid { display: none; }
+}
+
+.header {
+    text-shadow: 1px 1px grey, 
+                2px 2px grey, 
+                3px 3px grey;   
 }
