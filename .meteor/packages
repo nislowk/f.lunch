@@ -17,4 +17,5 @@ mdg:camera
 jquery
 d0minikk:materialize-meteor
 email
-autopublish
+percolate:velocityjs
+mike:mocha
