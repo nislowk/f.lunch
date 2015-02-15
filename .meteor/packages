@@ -17,15 +17,7 @@ mdg:camera
 jquery
 d0minikk:materialize-meteor
 email
-<<<<<<< HEAD
-<<<<<<< HEAD
 percolate:velocityjs
 mike:mocha
-=======
 autopublish
 ecwyne:polymer-elements
->>>>>>> Integrating Polymer
-=======
-percolate:velocityjs
-mike:mocha
->>>>>>> FETCH_HEAD
