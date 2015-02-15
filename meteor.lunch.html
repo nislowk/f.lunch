@@ -7,6 +7,8 @@
 
 <body>
     {{#if currentUser}}
+        {{> polymerTest}}
+<!--
         {{> nav}}
         {{> splash}}
         {{> icon}}
@@ -14,6 +16,7 @@
         {{> vote}}
         {{> footer}}
         {{> scripts}}
+-->
     {{else}}
         {{> title}}
         {{> video}}
@@ -21,7 +24,23 @@
         {{> register}}
     {{/if}}
 </body>
-
+<!-- Polymer Test Template -->
+<template name="polymerTest">
+    <div vertical layout>
+        <div><h1>Lunch App</h1></div>
+        <div>
+            <ul>
+                <li>Lorem</li>
+                <li>Lorem</li>
+                <li>Chadwick</li>
+            </ul>
+        </div>
+        <div horizontal layout>
+            <paper-input>email</paper-input>
+            <paper-button>submit</paper-button>
+        </div>
+    </div>
+</template>
 <!-- Login Page Title -->
 <template name="title">
     <h1 class="title">f.Lunch</h1>
