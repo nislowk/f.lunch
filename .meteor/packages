@@ -18,6 +18,5 @@ jquery
 d0minikk:materialize-meteor
 email
 mike:mocha
-autopublish
 ecwyne:polymer-elements
 percolate:velocityjs
