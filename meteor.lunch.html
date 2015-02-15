@@ -1,12 +1,16 @@
 <head>
     <link rel="shortcut icon" href="http://drzioeqvwiaw7.cloudfront.net/assets/img/favicon.ico"/>
-<title>Lunch</title>
+    <title>Lunch</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"/>
     <link href='http://fonts.googleapis.com/css?family=Advent+Pro:600' rel='stylesheet' type='text/css'>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    
 </head>
 
 <body>
     {{#if currentUser}}
+        {{> polymerTest}}
+<!--
         {{> nav}}
         {{> splash}}
         {{> icon}}
@@ -14,6 +18,7 @@
         {{> vote}}
         {{> footer}}
         {{> scripts}}
+-->
     {{else}}
         {{> title}}
         {{> video}}
@@ -22,6 +27,13 @@
     {{/if}}
 </body>
 
+<!-- Polymer Test Page -->
+<template name="polymerTest">
+    <core-header-panel>
+        <core-toolbar>
+        </core-toolbar>
+    </core-header-panel>
+</template>
 <!-- Login Page Title -->
 <template name="title">
     <h1 class="title">f.Lunch</h1>
