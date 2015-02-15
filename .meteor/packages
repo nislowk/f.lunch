@@ -17,4 +17,10 @@ mdg:camera
 jquery
 d0minikk:materialize-meteor
 email
+<<<<<<< HEAD
+percolate:velocityjs
+mike:mocha
+=======
 autopublish
+ecwyne:polymer-elements
+>>>>>>> Integrating Polymer

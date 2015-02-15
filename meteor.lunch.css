@@ -120,9 +120,7 @@ body {
 }
 
 .header {
-    text-shadow: 1px 1px grey, 
-                2px 2px grey, 
-                3px 3px grey;   
+   font-family: 'Raleway', Calibri, Arial, sans-serif;  
 }
 
 #logo {
