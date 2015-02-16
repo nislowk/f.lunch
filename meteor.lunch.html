@@ -1,190 +1,144 @@
 <head>
     <link rel="shortcut icon" href="http://drzioeqvwiaw7.cloudfront.net/assets/img/favicon.ico"/>
-	<title>Lunch</title>
+    <title>Lunch</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"/>
+
     <link href='http://fonts.googleapis.com/css?family=Advent+Pro:600' rel='stylesheet' type='text/css'>
     <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <link rel="import" href="bower_components/polymer/polymer.html">
     <link rel="import" href="bower_components/paper-input/paper-input.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+    <link rel=-"import" href="bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-input/paper-input-decorator.html">
 
 </head>
 
 <body>
     {{#if currentUser}}
-        {{> polymerTest}}
-<!--
+
         {{> nav}}
-        {{> splash}}
-        {{> icon}}
-        {{> create}}
-        {{> vote}}
-        {{> footer}}
-        {{> scripts}}
--->
+
     {{else}}
+
         {{> title}}
         {{> video}}
         {{> login}}
         {{> register}}
+
     {{/if}}
 </body>
-<!-- Polymer Test Template -->
-<template name="polymerTest">
-    <div vertical layout>
-        <div><h1>Lunch App</h1></div>
-        <div>
-            <ul>
-                <li>Lorem</li>
-                <li>Lorem</li>
-                <li>Chadwick</li>
-            </ul>
-        </div>
-        <div horizontal layout>
-            <paper-input>email</paper-input>
-            <paper-button>submit</paper-button>
-        </div>
-    </div>
-</template>
+
 <!-- Login Page Title -->
 <template name="title">
-    <h1 class="title">f.Lunch</h1>
+    <h1 class="l-title">f.Lunch</h1>
 </template>
 
 <!-- Video Background -->
 <template name="video">
-    <video autoplay  class="video" poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
-        <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
-        <source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
+    <video autoplay  class="video" poster="" id="bgvid" loop>
+    <!-- insert poster -->
+    <!-- insert webm video version -->
+        <source src="videoPlaceholder.mp4" type="video/mp4">
     </video>
 </template>
 
 <!-- User Auth View -->
 <!-- User Register Form -->
 <template name="register">
-    <form class="register" align="center">
-      <h1> Sign Up </h1>
-        <input type="email" id="register-email" placeholder="email">
-        <input type="password" id="register-password" placeholder="password">
-        <input type="submit" value="Register" id="submit" class="submit">
+    <form class="register" align="center" vertical center-justified layout center>
+        <h1 class="r-title"> Sign Up </h1>
+            <paper-input type="email" id="register-email" autocomplete="on"></paper-input>
+            <paper-input type="password" id="register-password" placeholder="password"></paper-input>
+            <paper-button fill="false" raised="true"><input type="submit" value="Register" id="submit"></paper-button>
     </form>
 </template>
 
 <!-- Login Form -->
 <template name="login">
-    <form class="login" align="center">
-        <h1> Sign In </h1>
-        <input type="email" id="login-email" placeholder="email">
-        <input type="password" id="login-password" placeholder="password">
-        <input type="submit" value="Login" id="submit" class="submit">
+    <form class="login" align="center" vertical center-justified layout center>
+        <h1 class="r-title"> Sign In </h1>
+            <paper-input type="email" id="login-email" autocomplete="on"></paper-input>
+            <paper-input type="password" id="login-password" placeholder="password"></paper-input>
+            <paper-button fill="false" raised="true"><input type="submit" value="Sign In" id="submit"></paper-button>
     </form>
 </template>
 
 <!-- Logged In User View -->
 <template name="nav">
-    <div class="navbar-fixed">
-        <nav class="grey darken-3">
-            <div class="nav-wrapper">
-                <a href="#home " class="brand-logo white-text">f.<b>lunch</b></a>
-                <ul id="nav-mobile" class="right side-nav">
-                    <li class="create"><a href="#create">Create</a></li>
-                    <li><a href="#vote" >Vote</a></li>
-                    <li><a href="#order">Order</a></li>
-                    <li><a href="#logout" class="logout">Logout</a></li>
-                </ul>
-                <!-- Include this line below -->
-                <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-                <!-- End -->
-            </div>
-        </nav>
-    </div>
+    <core-header-panel >
+        <core-toolbar shadow="true" vertical center-justified layout>
+            <div class="h-title" vertical layout center>f.lunch</div>
+            <paper-tabs>
+                <paper-tab> <a href="#create">Create</a></paper-tab>
+                <paper-tab> <a href="#vote">Vote</a></paper-tab>
+                <paper-tab> <a href="#order">Order</a></paper-tab>
+                <paper-tab flex> <a href="#logout" class="logout">Logout</a></paper-tab>
+            </paper-tabs>
+        </core-toolbar>
+
+        {{> splash}}
+        {{> icon}}
+        {{> create}}
+        {{> vote}}
+        {{> order}}
+        {{> footer}}
+        {{> scripts}}
+
+    </core-header-panel>
 </template>
 
 <!-- Splash Page -->
 <template name="splash">
     <div class="scrollspy" id="home">
-        <div id="index-banner" class="parallax-container">
-            <div class="parallax"><img src="https://gigaom2.files.wordpress.com/2012/09/shutterstock_92522029-e1347738681645.jpg" alt="Unsplashed background img 2"></div>
+        <div class="parallax"><img src="https://gigaom2.files.wordpress.com/2012/09/shutterstock_92522029-e1347738681645.jpg" alt="Unsplashed background img 2"></div>
             <div class="container">
                 <h1 class="header center grey-text text-lighten-2">Fuzz Lunch</h1>
-                <div class="row center">
-                    <h2 class="center"><i class="large mdi-maps-local-restaurant grey-text text-darken-4" id="logo"></i></h2>
-                </div>
-                <div class="row center">
-    <!--replace href with signin view -->
-                    <a id="start-button" href="#create" class="btn-large waves-effect waves-light blue lighten-2" >Get Started</a>
-                </div>
+            <div class="row center">
+                <h2 class="center"><i class="large mdi-maps-local-restaurant grey-text text-darken-4" id="logo"></i></h2>
             </div>
-        </div>
+            <div class="row center">
+            <!--replace href with signin view -->
+                <a id="start-button" href="#create" class="btn-large waves-effect waves-light blue lighten-2" >Get Started</a>
+            </div>
+            </div>
     </div>
 </template>
 
 <!--   Icon Section   -->
 <template name="icon">
-    <div class="container">
-        <div class="section">
-            <div class="row">
-                <div class="col s12">
-                    <div class="icon-block">
-                        <h2 class="center black-text"><i class="mdi-image-flash-on blue-grey-text text-darken-3"></i></h2>
-                        <h5 class="flow-text center-align"><b>Team-Lunch Made To Order</b></h5>
-                        <p class="flow-text light center-align">Fuzz Lunch is a modern web application created to streamline team-lunch ordering. Efficient workflow is achieved through increased accessibility, in virtue of, enhanced visibility & simplistic design.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h2 class="center black-text"><i class="mdi-image-flash-on blue-grey-text text-darken-3"></i></h2>
+        <h5 class="flow-text center-align"><b>Team-Lunch Made To Order</b></h5>
+            <p class="flow-text light center-align">Fuzz Lunch is a modern web application created to streamline team-lunch ordering. Efficient workflow is achieved through increased accessibility, in virtue of, enhanced visibility & simplistic design.</p>
 </template>
 
 <!-- Email Form -->
 <!-- Hookup Email -->
-<template name="create">
-    <div class="divider"></div>
-    <div class="container" id="create" >
-        <div class="section scrollspy">
-            <div class="row">
-                <div class="col s12 center">
-                    <h2 class="flow-text">Cr<u>eate R</u>un</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="section">
-                    <form class="section center">
-                         <div class="input-field col s6 offset-s3">
-                                <i class="mdi-social-person prefix"></i>
-                            <input type="text" name="name" id="runName" class="validate">
-                                <label for="name">Name</label>
-                        </div>
-                        <div class="input-field col s6 offset-s3">
-                                <i class="mdi-communication-email prefix"></i>
-                            <input type="email" name="email" id="runEmail" class="validate">
-                                <label for="email">Email</label>
-                        </div>
-                        <div class="input-field col s6 offset-s3">
-                                <i class="mdi-editor-mode-edit prefix"></i>
-                            <textarea class="materialize-textarea" id="runMessage"></textarea>
-                                <label for="message">Message</label>
-                        </div>
-                        <div class="input-field col s4 offset-s4">
-                            <button class="btn blue lighten-2 waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+<template name="create" >
+<div class="divider"></div>
+    <h2 vertical layout center>Create Run</h2>
+        <form vertical layout center>
+            <paper-input-decorator label="Your Name">
+                <input is="core-input" id="runName">
+            </paper-input-decorator>
+            <paper-input-decorator label="Email">
+                <input is="core-input" id="runEmail">
+            </paper-input-decorator>
+            <paper-input-decorator label="Message">
+                <textarea id="runMessage"></textarea>
+            </paper-input-decorator>
+        </form>
 </template>
 
 <!-- Rest. Index -->
 <!-- Attach Quick-View Cards -->
 <template name="vote">
-    <div class="divider"></div>
-    <div class="container" id="order">
-        <div class="section scrollspy">
-          <div class="col s12 center">
-                <h2 class="flow-text">V<u>ot</u>e</h2>
-            </div>
-            <div class="col s5">
+<div class="divider"></div>
+    <div class="container">
+        <div class="col s3">
+            <h2 vertical layout center>Vote</h2>
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
                         <div class="collapsible-header"><i class="mdi-maps-store-mall-directory"></i>Asian</div>
@@ -239,88 +193,86 @@
                         </div>
                     </li>
                 </ul>
-                        <!-- Voting Form -->
-                        <div class="col s6">
-                            <div class="card-panel white">
-                                <h5 class="center-align grey-text">Your Picks</h5>
-                                <form action="#">
-                                    <p>
-                                        <input type="checkbox" id="test5"/>
-                                        <label for="test5">choice 1</label>
-                                    </p>
-                                    <p>
-                                        <input type="checkbox" id="test6"/>
-                                        <label for="test6">choice 2</label>
-                                    </p>
-                                    <p>
-                                        <input type="checkbox" id="test7"/>
-                                        <label for="test7">choice 3</label>
-                                    </p>
-                                    <p>
-                                        <input type="checkbox" id="test8"/>
-                                        <label for="test8">choice 4</label>
-                                     </p>
-                                </form>
-                            </div>
-                        </div>
-            </div>
         </div>
+            <!-- Voting Form -->
+                <div class="col s3">
+                <div class="card-panel white" vertical layout center>
+                    <h5 class="center-align grey-text">Your Picks</h5>
+                        <form action="#">
+                            <p>
+                                <input type="checkbox" id="test5"/>
+                                <label for="test5">choice 1</label>
+                            </p>
+                            <p>
+                                <input type="checkbox" id="test6"/>
+                                <label for="test6">choice 2</label>
+                            </p>
+                            <p>
+                                <input type="checkbox" id="test7"/>
+                                <label for="test7">choice 3</label>
+                            </p>
+                            <p>
+                                <input type="checkbox" id="test8"/>
+                                <label for="test8">choice 4</label>
+                            </p>
+                        </form>
+                </div>
+                </div>
     </div>
-</template>
+</template>     
 
 <!-- Order Template -->
 <template name="order">
-    <div class="divider"></div>
-                <div class="row">
-                    <div class="section">
-                        <div class="col s6">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="http://www.healthyorganicwoman.com/wp-content/uploads/2013/10/cappuccino-cup.jpg">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Order <i class="mdi-navigation-more-vert right"></i></span>
-                                    <p>Winning Restaurant:<a href="#">placeholder</a></p>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4 center-align">Order <i class="mdi-navigation-close right"></i></span>
-                                    <form class="col s12">
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="mdi-action-account-circle prefix"></i>
-                                                <input id="icon_prefix" type="text" class="validate">
-                                                <label for="icon_prefix">First Name</label>
-                                            </div>
-                                            <div class="input-field col s12">
-                                                <i class="mdi-communication-phone prefix"></i>
-                                                <input id="icon_telephone" type="tel" class="validate">
-                                                <label for="icon_telephone">Telephone</label>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+<div class="divider"></div>
+    <div class="container">
+    <div class="col s5">
+        <h2 vertical layout center>Order</h2>
+            <div class="card" vertical layout center>
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="http://www.healthyorganicwoman.com/wp-content/uploads/2013/10/cappuccino-cup.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Order <i class="mdi-navigation-more-vert right"></i></span>
+                    <p>Winning Restaurant:<a href="#">placeholder</a></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4 center-align">Order <i class="mdi-navigation-close right"></i></span>
+                    <form class="col s12">
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <i class="mdi-action-account-circle prefix"></i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">First Name</label>
                         </div>
-                    </div>
-                </div>
+                        <div class="input-field col s12">
+                            <i class="mdi-communication-phone prefix"></i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Telephone</label>
+                        </div>
+                        </div>
+                    </form>
+            </div>
+            </div>
+    </div>
+    </div>
 </template>
 
 <!-- Insert Check Mark Voting Form -->
 <!-- Footer -->
 <template name="footer">
     <footer class="page-footer black">
-        <div class="container">
-            <div class="row center">
-                <div class="col s12">
-                    <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Fuzz Productions, LLC" href="https://fuzzproductions.com/">Who We Are</a>
-                </div>
-            </div>
+    <div class="container">
+        <div class="row center">
+        <div class="col s12">
+            <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Fuzz Productions, LLC" href="https://fuzzproductions.com/">Who We Are</a>
         </div>
-        <div class="footer-copyright center">
-            <div class="container">
-                <a class="flow-text grey-text" href="https://fuzzproductions.com"></a>
-            </div>
         </div>
+    </div>
+    <div class="footer-copyright center">
+    <div class="container">
+            <a class="flow-text grey-text" href="https://fuzzproductions.com"></a>
+    </div>
+    </div>
     </footer>
 </template>
 
@@ -328,15 +280,12 @@
 <template name="scripts">
     <script>
         $(document).ready(function(){
-            $('.parallax').parallax();
-            $(".button-collapse").sideNav();
-            $(".dropdown-button").dropdown();
             $('.scrollspy').scrollSpy();
             $('ul.tabs').tabs();
             $('.tooltipped').tooltip({delay: 50});
             $('.collapsible').collapsible({
-                accordion : true
+            accordion : true
             });
-        });
+            });
     </script>
 </template>

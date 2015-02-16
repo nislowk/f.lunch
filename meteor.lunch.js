@@ -48,12 +48,15 @@ if(Meteor.isServer) {
          check(link, String);
          check(name, String);
          check(message, String);
+        Meteor.setTimeout(function() {
         Email.send({
-          from: "karl.nislow@gmail.com",
+          //add in dynamic from variable to set equal to current.userId(email);
+          from: 'Karl',
           to: to,
           subject: name + " Has Created A New Lunch Run",
           text: message + " www.example.com/"+ link
-       });
+        });
+       }, 0);
       }
     });
   })
