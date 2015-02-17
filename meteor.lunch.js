@@ -1,3 +1,4 @@
+// ** Use CoffeeScript 
 if(Meteor.isClient){
     
 // Registration Form
