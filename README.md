@@ -2,8 +2,8 @@
   <h2>1.0 Installation</h2>
     <h4>1.1 Meteor.js</h4>
         <p>curl https://install.meteor.com/ | sh</p>
-          <ul>cd <b>project name</b></ul>
-          <ul>meteor</ul>
+          <ul>$ cd <b>project name</b></ul>
+          <ul>$ meteor</ul>
      <p><b>Note: Since we are using an entire meteor project, when you run the project locally, it will install any specified packages automatically.</b></p>
      
   <h2>2.0 For Reference</h2>
