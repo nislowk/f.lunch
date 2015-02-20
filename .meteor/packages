@@ -16,3 +16,10 @@ email
 ecwyne:polymer-elements
 accounts-ui
 meteorhacks:kadira
+percolate:momentum
+differential:vulcanize
+coffeescript
+less
+reactive-var
+underscore
+meteorhacks:kadira-profiler
