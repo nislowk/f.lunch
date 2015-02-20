@@ -101,3 +101,8 @@ paper-toast {
   left: 0;
   width: 100%;
 }
+
+core-icon-button {
+  color: red;
+}
+}

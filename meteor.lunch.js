@@ -37,6 +37,7 @@ Template.nav.events({
   });
 }
 
+// ** Setup customer.io email for automation
 // Setting Mail Server Envirnonment 
 if(Meteor.isServer) {
     Meteor.startup(function () { 

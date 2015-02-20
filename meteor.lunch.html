@@ -13,6 +13,9 @@
     <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/paper-input/paper-input-decorator.html">
+    <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
+    <link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="bower_components/core-menu/core-menu.html">
 
 </head>
 
@@ -50,7 +53,7 @@
 <template name="register">
     <form class="register" align="center" vertical center-justified layout center>
         <h1 class="r-title"> Sign Up </h1>
-            <paper-input type="email" id="register-email" autocomplete="on"></paper-input>
+            <paper-input type="email" id="register-email" autocomplete></paper-input>
             <paper-input type="password" id="register-password" placeholder="password"></paper-input>
             <paper-button fill="false" raised="true"><input type="submit" value="Register" id="submit"></paper-button>
     </form>
@@ -60,7 +63,7 @@
 <template name="login">
     <form class="login" align="center" vertical center-justified layout center>
         <h1 class="r-title"> Sign In </h1>
-            <paper-input type="email" id="login-email" autocomplete="on"></paper-input>
+            <paper-input type="email" id="login-email" autocomplete></paper-input>
             <paper-input type="password" id="login-password" placeholder="password"></paper-input>
             <paper-button fill="false" raised="true"><input type="submit" value="Sign In" id="submit"></paper-button>
     </form>
@@ -68,16 +71,30 @@
 
 <!-- Logged In User View -->
 <template name="nav">
-    <core-header-panel >
-        <core-toolbar shadow="true" vertical center-justified layout>
-            <div class="h-title" vertical layout center>f.lunch</div>
-            <paper-tabs>
-                <paper-tab> <a href="#create">Create</a></paper-tab>
-                <paper-tab> <a href="#vote">Vote</a></paper-tab>
-                <paper-tab> <a href="#order">Order</a></paper-tab>
-                <paper-tab flex> <a href="#logout" class="logout">Logout</a></paper-tab>
-            </paper-tabs>
-        </core-toolbar>
+
+<core-drawer-panel>
+  <core-header-panel drawer>
+   <core-toolbar shadow="true" vertical center-justified layout>
+        <div class="h-title">f.lunch</div>
+    </core-toolbar>
+    <div>
+                   <core-menu selected="0" on-core-select="{{selectAction}}">
+  <core-item icon="settings" label="Settings"></core-item>
+  <core-item icon="dialog" label="Dialog"></core-item>
+  <core-item icon="search" label="Search"></core-item>
+</core-menu>
+    </div>
+  </core-header-panel>
+  <core-header-panel main>
+    <core-toolbar>
+    <core-icon-button icon="menu" core-drawer-toggle>Meow</core-icon-button>
+        <paper-tabs>
+            <paper-tab> <a href="#create">Create</a></paper-tab>
+            <paper-tab> <a href="#vote">Vote</a></paper-tab>
+            <paper-tab> <a href="#order">Order</a></paper-tab>
+            <paper-tab flex> <a href="#logout" class="logout">Logout</a></paper-tab>
+        </paper-tabs>
+    </core-toolbar>
 
         {{> splash}}
         {{> icon}}
@@ -87,7 +104,8 @@
         {{> footer}}
         {{> scripts}}
 
-    </core-header-panel>
+   </core-header-panel>
+</core-drawer-panel>
 </template>
 
 <!-- Splash Page -->
