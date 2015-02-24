@@ -9,14 +9,19 @@
     <link rel="import" href="bower_components/paper-input/paper-input.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
     <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
     <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/paper-input/paper-input-decorator.html">
     <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
     <link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="bower_components/core-icon/core-icon.html">
+    <link rel="import" href="bower_components/core-iconset/core-iconset.html">
     <link rel="import" href="bower_components/core-menu/core-menu.html">
-
+    <link rel="import" href="bower_components/core-pages/core-pages.html">
+    <link rel="import" href="bower_components/core-input/core-input.html">
+    <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
 </head>
 
 <body>
@@ -73,63 +78,72 @@
 <template name="nav">
 
 <core-drawer-panel>
-  <core-header-panel drawer>
-   <core-toolbar shadow="true" vertical center-justified layout>
-        <div class="h-title">f.lunch</div>
+  <core-header-panel drawer class="side" vertical center-justified layout center shadow="false">
+   <core-toolbar class="tall" id="nav" vertical center-justified layout center shadow="false">
+        <div class="h-title"><b>f</b>.lunch</div>
     </core-toolbar>
-    <div>
-                   <core-menu selected="0" on-core-select="{{selectAction}}">
-  <core-item icon="settings" label="Settings"></core-item>
-  <core-item icon="dialog" label="Dialog"></core-item>
+     {{> index}}
+    <core-menu selected="0" on-core-select="{{selectAction}}" vertical center-justified layout center>
   <core-item icon="search" label="Search"></core-item>
 </core-menu>
-    </div>
   </core-header-panel>
-  <core-header-panel main>
-    <core-toolbar>
-    <core-icon-button icon="menu" core-drawer-toggle>Meow</core-icon-button>
-        <paper-tabs>
-            <paper-tab> <a href="#create">Create</a></paper-tab>
-            <paper-tab> <a href="#vote">Vote</a></paper-tab>
-            <paper-tab> <a href="#order">Order</a></paper-tab>
-            <paper-tab flex> <a href="#logout" class="logout">Logout</a></paper-tab>
+
+  <core-scroll-header-panel main condenses="true" keepCondensedHeader="true" shadow="true">
+    <core-toolbar class="tall" shadow="true">
+        <paper-tabs class="bottom fit" selected="0">
+            <paper-tab vertical end-justified layout center href="#home"> Home</paper-tab>
+            <paper-tab vertical end-justified layout center href="#create"> Create</paper-tab>
+            <paper-tab vertical end-justified layout center href="#vote"> Vote</paper-tab>
+            <paper-tab vertical end-justified layout center href="#order"> Order</paper-tab>
+            <paper-tab vertical end-justified layout center href="#logout" class="logout">Logout</paper-tab>
         </paper-tabs>
     </core-toolbar>
-
-        {{> splash}}
+    <core-pages selected="0" id="core-pages">
+    <div id="home">
+    <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
+         {{> splash}}
         {{> icon}}
+        {{> footer}}
+    </div>
+
+    <div id="create">
         {{> create}}
+        {{> footer}}
+    </div>
+    <div id="vote">
         {{> vote}}
+        {{> footer}}
+    </div>
+    <div id="order">
         {{> order}}
         {{> footer}}
-        {{> scripts}}
-
-   </core-header-panel>
+    </div>
+</core-pages>
+   </core-scroll-header-panel>
 </core-drawer-panel>
+        {{> scripts}}
 </template>
 
 <!-- Splash Page -->
 <template name="splash">
-    <div class="scrollspy" id="home">
-        <div class="parallax"><img src="https://gigaom2.files.wordpress.com/2012/09/shutterstock_92522029-e1347738681645.jpg" alt="Unsplashed background img 2"></div>
             <div class="container">
-                <h1 class="header center grey-text text-lighten-2">Fuzz Lunch</h1>
+                <h1 class="header center grey-text text-darken-4">Welcome</h1>
             <div class="row center">
-                <h2 class="center"><i class="large mdi-maps-local-restaurant grey-text text-darken-4" id="logo"></i></h2>
+                <h2 class="center"><i class="large mdi-maps-local-restaurant grey-text text-lighten-1" id="logo"></i></h2>
             </div>
             <div class="row center">
-            <!--replace href with signin view -->
                 <a id="start-button" href="#create" class="btn-large waves-effect waves-light blue lighten-2" >Get Started</a>
             </div>
-            </div>
     </div>
-</template>
+</template> 
 
 <!--   Icon Section   -->
 <template name="icon">
+    <div class="divider"></div>
     <h2 class="center black-text"><i class="mdi-image-flash-on blue-grey-text text-darken-3"></i></h2>
         <h5 class="flow-text center-align"><b>Team-Lunch Made To Order</b></h5>
-            <p class="flow-text light center-align">Fuzz Lunch is a modern web application created to streamline team-lunch ordering. Efficient workflow is achieved through increased accessibility, in virtue of, enhanced visibility & simplistic design.</p>
+            <p class="flow-text light center-align">Fuzz Lunch is a modern web application created to streamline team-lunch ordering.</p> <p class="flow-text light center-align">Efficient workflow is achieved through <i>increased</i> accessibility, in virtue of, <b>enhanced visibility</b> & <u>simplistic design</u>.</p>
+    
 </template>
 
 <!-- Email Form -->
@@ -147,16 +161,18 @@
             <paper-input-decorator label="Message">
                 <textarea id="runMessage"></textarea>
             </paper-input-decorator>
+            <paper-button fill="false" raised="true"><input type="submit" value="Register" id="submit"></paper-button>
         </form>
 </template>
 
+<!-- ** Still converting to Polymer ** -->
 <!-- Rest. Index -->
 <!-- Attach Quick-View Cards -->
-<template name="vote">
+<template name="index">
 <div class="divider"></div>
     <div class="container">
-        <div class="col s3">
-            <h2 vertical layout center>Vote</h2>
+        <div class="col s2">
+            <h3 class="flow-text" vertical center-justified layout center>Search Restaurants</h3>
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
                         <div class="collapsible-header"><i class="mdi-maps-store-mall-directory"></i>Asian</div>
@@ -212,7 +228,13 @@
                     </li>
                 </ul>
         </div>
+    </div>
+    </template>
+
+<!-- ** Still converting to Polymer ** -->
+    <template name="vote">
             <!-- Voting Form -->
+                <h2 vertical layout center>Vote</h2>
                 <div class="col s3">
                 <div class="card-panel white" vertical layout center>
                     <h5 class="center-align grey-text">Your Picks</h5>
@@ -235,10 +257,10 @@
                             </p>
                         </form>
                 </div>
-                </div>
     </div>
 </template>     
 
+<!-- ** Still converting to Polymer ** -->
 <!-- Order Template -->
 <template name="order">
 <div class="divider"></div>
@@ -275,10 +297,11 @@
     </div>
 </template>
 
+<!-- ** Still converting to Polymer ** -->
 <!-- Insert Check Mark Voting Form -->
 <!-- Footer -->
 <template name="footer">
-    <footer class="page-footer black">
+    <footer class="page-footer">
     <div class="container">
         <div class="row center">
         <div class="col s12">
@@ -297,6 +320,12 @@
 <!--  Scripts-->
 <template name="scripts">
     <script>
+         document.getElementById("core-pages").addEventListener('click', function(e) {
+             var pages = document.querySelector('core-pages');
+             pages.selected = (pages.selected + 1) % pages.children.length;
+
+        });
+
         $(document).ready(function(){
             $('.scrollspy').scrollSpy();
             $('ul.tabs').tabs();
@@ -305,5 +334,6 @@
             accordion : true
             });
             });
+
     </script>
 </template>
