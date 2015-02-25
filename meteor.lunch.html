@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"/>
 
     <link href='http://fonts.googleapis.com/css?family=Advent+Pro:600' rel='stylesheet' type='text/css'>
-    <link rel="import" href="bower_components/polymer/polymer.html">
     <link rel="import" href="bower_components/paper-input/paper-input.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
@@ -318,21 +317,21 @@
 
 <!--  Scripts-->
 <template name="scripts">
-    // <script>
-    //      document.getElementById("core-pages").addEventListener('click', function(e) {
-    //          var pages = document.querySelector('core-pages');
-    //          pages.selected = (pages.selected + 1) % pages.children.length;
+     <script>
+         document.getElementById("core-pages").addEventListener('click', function(e) {
+             var pages = document.querySelector('core-pages');
+             pages.selected = (pages.selected + 1) % pages.children.length;
 
-    //     });
+        });
 
-    //     $(document).ready(function(){
-    //         $('.scrollspy').scrollSpy();
-    //         $('ul.tabs').tabs();
-    //         $('.tooltipped').tooltip({delay: 50});
-    //         $('.collapsible').collapsible({
-    //         accordion : true
-    //         });
-    //         });
+        $(document).ready(function(){
+            $('.scrollspy').scrollSpy();
+            $('ul.tabs').tabs();
+            $('.tooltipped').tooltip({delay: 50});
+            $('.collapsible').collapsible({
+            accordion : true
+            });
+            });
 
     </script>
 </template>
