@@ -24,26 +24,26 @@ paper-tabs {
   color: white;
   text-align: center;
   width: 100%;
-  padding-top: 20px;
 }
 
 .h-title {
   font-size: 21px;
   color: black;
 }
-
 .r-title {
+ text-shadow: 3px 3px white;
+}
+.r-title:hover {
     text-shadow: 1px 1px grey, 
                 2px 2px grey, 
                 3px 3px grey;
-   -webkit-transition: all 0.12s ease-out;
-   -moz-transition:    all 0.12s ease-out;
-   -ms-transition:     all 0.12s ease-out;
-   -o-transition:      all 0.12s ease-out;
+   -webkit-transition: all 1s ease-out;
 }
 
 .video { 
+  -webkit-filter: grayscale(100%) blur(1px);
   position: fixed;
+  background-image: url("background.jpg");
   width: auto;
   height: auto;
   min-width: 100%;
@@ -56,63 +56,67 @@ paper-tabs {
   object-fit: contain;
   transition: 1s opacity;
 }
+
+body:hover .video {
+  -webkit-filter: grayscale(10%) blur(1px) contrast(85%) brightness(85%);
+}
+
+body:hover .register {
+  background: rgba(0,0,0,0.5);
+}
+
+body:hover .l-title {
+  -webkit-filter: grayscale(0%);
+}
 .register, .login { 
+  -webkit-animation: fadein 4s;
   position: relative;
   overflow: hide;
-  display: block;
-  width: 55%;
-  height: 35%;
+  display: inline-block;
+  width: 35%;
+  height: 40%;
+  border: 3px solid white;
   padding: .4rem;
   margin: 1rem auto;
   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
   font-size: 1.2rem;
   font-weight:100;
-  opacity: 0.65; 
+  background-color: silver;
+  opacity: 0.5; 
   color: black;
-  box-shadow: 3px 3px white,
-                6px 6px grey;
-  background: rgba(0,0,0,0.5);
 }
+
+@-webkit-keyframes fadein {
+    0%   {opacity: 0;}
+    25%  {opacity: 0;}
+    50%  {opacity: 0.33;}
+    75%  {opacity:0.66;}
+    100% {background: 1;}
+}
+
 .register:hover, .login:hover {
-    top: -1px;
-    position: relative;
-    background: grey;
     box-shadow: 3px 3px 0px black; 
-}
-paper-button {
-  text-transform: uppercase;
-  margin-top: 12px;
 }
 
 .l-title {
+  -webkit-filter: grayscale(100%);
+ -webkit-animation: fadein 5s;
  display: block;
  font-size: 5rem;
  text-transform:lowercase;
  font-family: 'Advent Pro', sans-serif;
  opacity: 0.85;
- color: #2b0042;
+ color: #f78774;
  text-align: center;
  position: relative;
-  width: 20%;
-  height: 20%;
   padding: .4rem;
   margin: 1rem auto;
- text-shadow: 3px 0px 1px #ff5252,
-               -3px 0px 0px #448aff ;
-}
-.l-title:hover {
-  text-shadow: -3px -3px 0px #ff5252,
-             3px 3px 1px #448aff ;
+  text-shadow: 3px 3px 1px black; 
 }
 
-paper-toast {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-core-icon-button {
-  color: red;
+paper-button {
+  background-color: black;
+  color: white;
 }
 
 core-pages {
@@ -149,7 +153,7 @@ core-toolbar {
   background-color: white;
 }
 
-paper-input /deep/ .focused-underline {
+paper-input-decorator /deep/ .focused-underline {
   background-color: white;
 }
 

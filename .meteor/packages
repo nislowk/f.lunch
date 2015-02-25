@@ -6,8 +6,10 @@
 
 meteor-platform
 email
-accounts-password
-coffeescript
 ecwyne:polymer-elements
 less
-materialize:materialize
+accounts-password
+coffeescript
+meteorhacks:inject-initial
+differential:vulcanize
+reactive-var

@@ -28,11 +28,10 @@
         {{> nav}}
 
     {{else}}
-
-        {{> title}}
         {{> video}}
+        {{> title}}
         {{> login}}
-        {{> register}}
+        <!-- {{> register}} -->
 
     {{/if}}
 </body>
@@ -44,31 +43,48 @@
 
 <!-- Video Background -->
 <template name="video">
-    <video autoplay  class="video" poster="" id="bgvid" loop>
+    <video autoplay  class="video" poster="background.jpg" id="bgvid" loop>
     <!-- insert poster -->
     <!-- insert webm video version -->
-        <source src="videoPlaceholder.mp4" type="video/mp4">
+        <source src="foodVid.mp4" type="video/mp4">
     </video>
 </template>
+
 
 <!-- User Auth View -->
 <!-- User Register Form -->
 <template name="register">
     <form class="register" align="center" vertical center-justified layout center>
-        <h1 class="r-title"> Sign Up </h1>
-            <paper-input type="email" id="register-email" autocomplete></paper-input>
-            <paper-input type="password" id="register-password" placeholder="password"></paper-input>
-            <paper-button fill="false" raised="true"><input type="submit" value="Register" id="submit"></paper-button>
+        <h1 class="r-title" vertical start-justified layout center> Sign Up </h1>
+             <paper-input-decorator floatingLabel label="email">
+                <input is="core-input" type="email" id="register-email" required>
+            </paper-input-decorator>
+            <paper-input-decorator floatingLabel label="password">
+                <input is="core-input" type="password" id="register-password" required>
+            </paper-input-decorator>
+             <paper-button type="submit" value="Register" id="submit" onclick="submit">Submit</paper-button>
+
+               <!--   <paper-input type="email" id="register-email" autocomplete ></paper-input> -->
+                 <!-- <paper-input type="password" id="register-password" placeholder="password"></paper-input> -->
+          <!--   <paper-button fill="false" raised="true"><input type="submit" value="Register" id="submit"></paper-button> -->
     </form>
 </template>
 
 <!-- Login Form -->
 <template name="login">
     <form class="login" align="center" vertical center-justified layout center>
-        <h1 class="r-title"> Sign In </h1>
-            <paper-input type="email" id="login-email" autocomplete></paper-input>
+        <h1 class="r-title" > Sign In </h1>
+            <paper-input-decorator floatingLabel label="email">
+                <input is="core-input" type="email" id="login-email" required>
+            </paper-input-decorator>
+            <paper-input-decorator floatingLabel label="password">
+                <input is="core-input" type="password" id="login-password" required>
+            </paper-input-decorator>
+             <paper-button type="submit" value="Login" id="submit" onclick="submit">Submit</paper-button>
+
+           <!--  <paper-input type="email" id="login-email" autocomplete></paper-input>
             <paper-input type="password" id="login-password" placeholder="password"></paper-input>
-            <paper-button fill="false" raised="true"><input type="submit" value="Sign In" id="submit"></paper-button>
+            <paper-button fill="false" raised="true"><input type="submit" value="Sign In" id="submit"></paper-button> -->
     </form>
 </template>
 
