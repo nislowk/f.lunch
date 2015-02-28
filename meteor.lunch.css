@@ -65,9 +65,9 @@ body:hover .register {
   background: rgba(0,0,0,0.5);
 }
 
-body:hover .l-title {
+/*body:hover .l-title {
   -webkit-filter: grayscale(0%);
-}
+}*/
 .register, .login { 
   -webkit-animation: fadein 4s;
   position: relative;
@@ -99,7 +99,6 @@ body:hover .l-title {
 }
 
 .l-title {
-  -webkit-filter: grayscale(100%);
  -webkit-animation: fadein 5s;
  display: block;
  font-size: 5rem;
@@ -162,4 +161,8 @@ paper-tabs paper-tab::shadow #ink {
 }
 paper-tabs::shadow #selectionBar {
   background-color: black;
+}
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+   -webkit-box-shadow: 0 0 0px 1000px white inset;
+    color: white !important;
 }
