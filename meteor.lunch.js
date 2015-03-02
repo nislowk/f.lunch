@@ -3,7 +3,7 @@ if(Meteor.isClient){
     
 // Registration Form
 Template.register.events({
-'click .register paper-button': function(event, template){
+'click paper-button.signup': function(event, template){
     event.preventDefault();
     var emailVar = template.find('#register-email').value;
     var passwordVar = template.find('#register-password').value;
@@ -18,7 +18,7 @@ Template.register.events({
 // Login Form
 if(Meteor.isClient){
 Template.login.events({
-'click .login paper-button': function(event, template){
+'click paper-button.signin': function(event, template){
     event.preventDefault();
     var emailVar = template.find('#login-email').value;
     var passwordVar = template.find('#login-password').value;
@@ -30,12 +30,22 @@ Template.login.events({
 // Logout 
 if(Meteor.isClient){
 Template.nav.events({
-    'click paper-tab.logout': function(event){
+    'click paper-tab.signout': function(event){
         event.preventDefault();
         Meteor.logout();
      }
   });
 }
+
+// if(Meteor.isClient){
+// Template.footer.events({
+//     'click paper-icon-button.signup': function(event){
+//         event.preventDefault();
+//           Blaze.render(Template.register)
+//           Blaze.remove(Template.login)
+//      }
+//   });
+// }
 
 // ** Setup customer.io email for automation
 // Setting Mail Server Envirnonment 

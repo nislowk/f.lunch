@@ -16,7 +16,8 @@
         {{> video}}
         {{> title}}
         {{> login}}
-        <!-- {{> register}} -->
+        {{> footer}}
+        <!-- {{> register} -->
 
     {{/if}}
 </body>
@@ -29,7 +30,7 @@
 <!-- Video Background -->
 <template name="video">
     <video autoplay  class="video" poster="background.jpg" id="bgvid" loop>
-       <!--  <source src="foodVid.mp4" type="video/mp4"> -->
+        <source src="foodVideo.mp4" type="video/mp4">
     </video>
 </template>
 
@@ -45,7 +46,7 @@
             <paper-input-decorator floatingLabel label="password">
                 <input is="core-input" type="password" id="register-password" required>
             </paper-input-decorator>
-             <paper-button type="submit" value="Register">Submit</paper-button>
+             <paper-button type="submit" value="Register" class="signup">Submit</paper-button>
     </form>
 </template>
 
@@ -59,7 +60,7 @@
             <paper-input-decorator floatingLabel label="password">
                 <input is="core-input" type="password" id="login-password" required>
             </paper-input-decorator>
-        <paper-button type="submit" value="Login">Submit</paper-button>
+        <paper-button type="submit" value="Login" class="signin">Submit</paper-button>
     </form>
 </template>
 
@@ -79,26 +80,25 @@
     </div>
   </core-header-panel>
   <core-header-panel main>
-    <core-toolbar class="main-toolbar">
+    <core-toolbar class="main-toolbar medium-tall">
     <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
         <paper-tabs>
             <paper-tab href="#create">Create</paper-tab>
             <paper-tab href="#vote" >Vote</paper-tab>
             <paper-tab href="#order">Order</paper-tab>
-            <paper-tab class="logout">Logout</paper-tab>
+            <paper-tab class="signout">Logout</paper-tab>
         </paper-tabs>
     </core-toolbar>
-
-        {{> splash}}
-        {{> icon}}
-        {{> create}}
-        {{> vote}}
         {{> order}}
-        {{> footer}}
-        {{> scripts}}
 
+    <core-pages selected="0">
+    <div>{{> splash}}{{> icon}} </div>
+  <div>{{> create}}</div>
+  <div> {{> vote}}</div>
+</core-pages>
    </core-header-panel>
 </core-drawer-panel>
+{{> scripts}}
 </template>
 
 <!-- Splash Page -->
@@ -240,7 +240,10 @@
 <!-- Insert Check Mark Voting Form -->
 <!-- Footer -->
 <template name="footer">
-            <a vertical layout center href="https://fuzzproductions.com/">Who We Are</a>
+   <div class="footer" horizontal center-justified layout end>
+             <paper-icon-button icon="cloud-queue" flex></paper-icon-button>
+             <paper-icon-button icon="account-child">Who We Are</paper-icon-button>
+        </div>
 </template>
 
 <!--  Scripts-->
