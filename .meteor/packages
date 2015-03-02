@@ -13,3 +13,5 @@ differential:vulcanize
 reactive-var
 meteor-platform
 accounts-password
+fourseven:scss
+mizzao:autocomplete

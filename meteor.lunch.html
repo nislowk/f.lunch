@@ -1,25 +1,10 @@
 <head>
     <link rel="shortcut icon" href="http://drzioeqvwiaw7.cloudfront.net/assets/img/favicon.ico"/>
     <title>Lunch</title>
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"/>
 
-    <link href='http://fonts.googleapis.com/css?family=Advent+Pro:600' rel='stylesheet' type='text/css'>
-    <link rel="import" href="bower_components/paper-input/paper-input.html">
-    <link rel="import" href="bower_components/paper-button/paper-button.html">
-    <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
-    <link rel="import" href="bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
-    <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
-    <link rel="import" href="bower_components/paper-button/paper-button.html">
-    <link rel="import" href="bower_components/paper-input/paper-input-decorator.html">
-    <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
-    <link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
-    <link rel="import" href="bower_components/core-icon/core-icon.html">
-    <link rel="import" href="bower_components/core-iconset/core-iconset.html">
-    <link rel="import" href="bower_components/core-menu/core-menu.html">
-    <link rel="import" href="bower_components/core-pages/core-pages.html">
-    <link rel="import" href="bower_components/core-input/core-input.html">
-    <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"/>
+    <link rel="import" href="polymer-imports.html">
+    <link rel="import" href="stylesheets.html">
 </head>
 
 <body>
@@ -44,9 +29,7 @@
 <!-- Video Background -->
 <template name="video">
     <video autoplay  class="video" poster="background.jpg" id="bgvid" loop>
-    <!-- insert poster -->
-    <!-- insert webm video version -->
-        <source src="foodVid.mp4" type="video/mp4">
+       <!--  <source src="foodVid.mp4" type="video/mp4"> -->
     </video>
 </template>
 
@@ -62,110 +45,80 @@
             <paper-input-decorator floatingLabel label="password">
                 <input is="core-input" type="password" id="register-password" required>
             </paper-input-decorator>
-             <paper-button type="submit" value="Register" id="submit" onclick="submit">Submit</paper-button>
-
-               <!--   <paper-input type="email" id="register-email" autocomplete ></paper-input> -->
-                 <!-- <paper-input type="password" id="register-password" placeholder="password"></paper-input> -->
-          <!--   <paper-button fill="false" raised="true"><input type="submit" value="Register" id="submit"></paper-button> -->
+             <paper-button type="submit" value="Register">Submit</paper-button>
     </form>
 </template>
 
 <!-- Login Form -->
 <template name="login">
     <form class="login" align="center" vertical center-justified layout center>
-        <h1 class="r-title" > Sign In </h1>
+        <h1 class="r-title"> Sign In </h1>
             <paper-input-decorator floatingLabel label="email">
                 <input is="core-input" type="email" id="login-email" required>
             </paper-input-decorator>
             <paper-input-decorator floatingLabel label="password">
                 <input is="core-input" type="password" id="login-password" required>
             </paper-input-decorator>
-             <paper-button type="submit" value="Login" id="submit" onclick="submit">Submit</paper-button>
-
-           <!--  <paper-input type="email" id="login-email" autocomplete></paper-input>
-            <paper-input type="password" id="login-password" placeholder="password"></paper-input>
-            <paper-button fill="false" raised="true"><input type="submit" value="Sign In" id="submit"></paper-button> -->
+        <paper-button type="submit" value="Login">Submit</paper-button>
     </form>
 </template>
 
 <!-- Logged In User View -->
 <template name="nav">
-
 <core-drawer-panel>
-  <core-header-panel drawer class="side" vertical center-justified layout center shadow="false">
-   <core-toolbar class="tall" id="nav" vertical center-justified layout center shadow="false">
-        <div class="h-title"><b>f</b>.lunch</div>
+  <core-header-panel drawer>
+   <core-toolbar shadow="true" class="nav-toolbar medium-tall">
+        <h1 class="h-title">f.lunch</h1>
     </core-toolbar>
-     {{> index}}
-    <core-menu selected="0" on-core-select="{{selectAction}}" vertical center-justified layout center>
+    <div>
+    <core-menu selected="0" on-core-select="{{selectAction}}">
+  <core-item icon="settings" label="Settings"></core-item>
+  <core-item icon="dialog" label="Dialog"></core-item>
   <core-item icon="search" label="Search"></core-item>
 </core-menu>
+    </div>
   </core-header-panel>
-
-  <core-scroll-header-panel main condenses="true" keepCondensedHeader="true" shadow="true">
-    <core-toolbar class="tall" shadow="true">
-        <paper-tabs class="bottom fit" selected="0">
-            <paper-tab vertical end-justified layout center href="#home"> Home</paper-tab>
-            <paper-tab vertical end-justified layout center href="#create"> Create</paper-tab>
-            <paper-tab vertical end-justified layout center href="#vote"> Vote</paper-tab>
-            <paper-tab vertical end-justified layout center href="#order"> Order</paper-tab>
-            <paper-tab vertical end-justified layout center href="#logout" class="logout">Logout</paper-tab>
+  <core-header-panel main>
+    <core-toolbar class="main-toolbar">
+    <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
+        <paper-tabs>
+            <paper-tab href="#create">Create</paper-tab>
+            <paper-tab href="#vote" >Vote</paper-tab>
+            <paper-tab href="#order">Order</paper-tab>
+            <paper-tab class="logout">Logout</paper-tab>
         </paper-tabs>
     </core-toolbar>
-    <core-pages selected="0" id="core-pages">
-    <div id="home">
-    <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
-         {{> splash}}
-        {{> icon}}
-        {{> footer}}
-    </div>
 
-    <div id="create">
+        {{> splash}}
+        {{> icon}}
         {{> create}}
-        {{> footer}}
-    </div>
-    <div id="vote">
         {{> vote}}
-        {{> footer}}
-    </div>
-    <div id="order">
         {{> order}}
         {{> footer}}
-    </div>
-</core-pages>
-   </core-scroll-header-panel>
-</core-drawer-panel>
         {{> scripts}}
+
+   </core-header-panel>
+</core-drawer-panel>
 </template>
 
 <!-- Splash Page -->
 <template name="splash">
-            <div class="container">
-                <h1 class="header center grey-text text-darken-4">Welcome</h1>
-            <div class="row center">
-                <h2 class="center"><i class="large mdi-maps-local-restaurant grey-text text-lighten-1" id="logo"></i></h2>
-            </div>
-            <div class="row center">
-                <a id="start-button" href="#create" class="btn-large waves-effect waves-light blue lighten-2" >Get Started</a>
-            </div>
-    </div>
-</template> 
+            <h1 vertical layout center>Fuzz Lunch</h1>
+                <paper-button vertical layout center href="#create">Get Started</paper-button>
+</template>
 
 <!--   Icon Section   -->
 <template name="icon">
-    <div class="divider"></div>
-    <h2 class="center black-text"><i class="mdi-image-flash-on blue-grey-text text-darken-3"></i></h2>
-        <h5 class="flow-text center-align"><b>Team-Lunch Made To Order</b></h5>
-            <p class="flow-text light center-align">Fuzz Lunch is a modern web application created to streamline team-lunch ordering.</p> <p class="flow-text light center-align">Efficient workflow is achieved through <i>increased</i> accessibility, in virtue of, <b>enhanced visibility</b> & <u>simplistic design</u>.</p>
-    
+    <h2><i class="mdi-image-flash-on blue-grey-text text-darken-3"></i></h2>
+        <h3 vertical layout center><b>Team-Lunch Made To Order</b></h3>
+            <p>Fuzz Lunch is a modern web application created to streamline team-lunch ordering. Efficient workflow is achieved through increased accessibility, in virtue of, enhanced visibility & simplistic design.</p>
 </template>
 
 <!-- Email Form -->
 <!-- Hookup Email -->
 <template name="create" >
-<div class="divider"></div>
     <h2 vertical layout center>Create Run</h2>
-        <form vertical layout center>
+        <form class="create" vertical layout center>
             <paper-input-decorator label="Your Name">
                 <input is="core-input" id="runName">
             </paper-input-decorator>
@@ -174,24 +127,17 @@
             </paper-input-decorator>
             <paper-input-decorator label="Message">
                 <textarea id="runMessage"></textarea>
+                  <paper-char-counter class="footer" target="runMessage"></paper-char-counter>
             </paper-input-decorator>
-            <paper-button fill="false" raised="true"><input type="submit" value="Register" id="submit"></paper-button>
+            <paper-button type="submit" value="createRun">Submit</paper-button>
         </form>
 </template>
 
-<!-- ** Still converting to Polymer ** -->
 <!-- Rest. Index -->
 <!-- Attach Quick-View Cards -->
-<template name="index">
-<div class="divider"></div>
-    <div class="container">
-        <div class="col s2">
-            <h3 class="flow-text" vertical center-justified layout center>Search Restaurants</h3>
-                <ul class="collapsible" data-collapsible="accordion">
-                    <li>
-                        <div class="collapsible-header"><i class="mdi-maps-store-mall-directory"></i>Asian</div>
-                        <div class="collapsible-body">
-                            <div class="collection">
+<template name="vote">
+
+                           <!--  <div class="collection">
                                 <a href="#!" class="collection-item">Osaka</a>
                                 <a href="#!" class="collection-item">Zen</a>
                                 <a href="#!" class="collection-item">Thai Garden</a>
@@ -237,47 +183,27 @@
                                 <a href="#!" class="collection-item">Paul & Elizabeth's</a>
                                 <a href="#!" class="collection-item">The Green Bean</a>
                                 <a href="#!" class="collection-item">Local Burger</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-        </div>
-    </div>
-    </template>
-
-<!-- ** Still converting to Polymer ** -->
-    <template name="vote">
+                    -->
             <!-- Voting Form -->
-                <h2 vertical layout center>Vote</h2>
-                <div class="col s3">
-                <div class="card-panel white" vertical layout center>
-                    <h5 class="center-align grey-text">Your Picks</h5>
-                        <form action="#">
-                            <p>
-                                <input type="checkbox" id="test5"/>
-                                <label for="test5">choice 1</label>
-                            </p>
-                            <p>
-                                <input type="checkbox" id="test6"/>
-                                <label for="test6">choice 2</label>
-                            </p>
-                            <p>
-                                <input type="checkbox" id="test7"/>
-                                <label for="test7">choice 3</label>
-                            </p>
-                            <p>
-                                <input type="checkbox" id="test8"/>
-                                <label for="test8">choice 4</label>
-                            </p>
-                        </form>
-                </div>
-    </div>
+                            <form vertical layout center>
+                                <paper-checkbox></paper-checkbox>
+                                <core-label>choice 1</core-label>
+                       
+                                <paper-checkbox></paper-checkbox>
+                                <core-label>choice 2</core-label>
+                         
+                                <paper-checkbox></paper-checkbox>
+                                <core-label>choice 3</core-label>
+                        
+                        
+                                <paper-checkbox></paper-checkbox>
+                                <core-label>choice 4</core-label>
+                            </form>
 </template>     
 
-<!-- ** Still converting to Polymer ** -->
 <!-- Order Template -->
 <template name="order">
-<div class="divider"></div>
+<!-- <div class="divider"></div>
     <div class="container">
     <div class="col s5">
         <h2 vertical layout center>Order</h2>
@@ -308,27 +234,13 @@
             </div>
             </div>
     </div>
-    </div>
+    </div> -->
 </template>
 
-<!-- ** Still converting to Polymer ** -->
 <!-- Insert Check Mark Voting Form -->
 <!-- Footer -->
 <template name="footer">
-    <footer class="page-footer">
-    <div class="container">
-        <div class="row center">
-        <div class="col s12">
-            <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Fuzz Productions, LLC" href="https://fuzzproductions.com/">Who We Are</a>
-        </div>
-        </div>
-    </div>
-    <div class="footer-copyright center">
-    <div class="container">
-            <a class="flow-text grey-text" href="https://fuzzproductions.com"></a>
-    </div>
-    </div>
-    </footer>
+            <a vertical layout center href="https://fuzzproductions.com/">Who We Are</a>
 </template>
 
 <!--  Scripts-->
@@ -337,17 +249,6 @@
          document.getElementById("core-pages").addEventListener('click', function(e) {
              var pages = document.querySelector('core-pages');
              pages.selected = (pages.selected + 1) % pages.children.length;
-
         });
-
-        $(document).ready(function(){
-            $('.scrollspy').scrollSpy();
-            $('ul.tabs').tabs();
-            $('.tooltipped').tooltip({delay: 50});
-            $('.collapsible').collapsible({
-            accordion : true
-            });
-            });
-
     </script>
 </template>

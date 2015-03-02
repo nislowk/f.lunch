@@ -3,7 +3,7 @@ if(Meteor.isClient){
     
 // Registration Form
 Template.register.events({
-'submit form': function(event, template){
+'click .register paper-button': function(event, template){
     event.preventDefault();
     var emailVar = template.find('#register-email').value;
     var passwordVar = template.find('#register-password').value;
@@ -18,7 +18,7 @@ Template.register.events({
 // Login Form
 if(Meteor.isClient){
 Template.login.events({
-'submit form': function(event, template){
+'click .login paper-button': function(event, template){
     event.preventDefault();
     var emailVar = template.find('#login-email').value;
     var passwordVar = template.find('#login-password').value;
@@ -30,7 +30,7 @@ Template.login.events({
 // Logout 
 if(Meteor.isClient){
 Template.nav.events({
-    'click .logout': function(event){
+    'click paper-tab.logout': function(event){
         event.preventDefault();
         Meteor.logout();
      }
@@ -67,7 +67,7 @@ if(Meteor.isServer) {
 // Calling Email Method Locally
 if(Meteor.isClient){
 Template.create.events({
-    'submit form': function(event, template){
+    'click .create paper-button': function(event, template){
         event.preventDefault();
             var to = template.find('#runEmail').value;
             var name = template.find('#runName').value;

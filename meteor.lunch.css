@@ -2,20 +2,18 @@ html, body {
   height: 100%;
   margin: 0;
 }
-core-scroll-header-panel {
+core-header-panel {
   height: 100%;
 }
 
-core-toolbar {
+.main-toolbar {
   background-color: black;
+  height: 10%;
   opacity: 0.95;
 }
 paper-tabs {
+  text-align: center;
   color: white;
-  height: 75%;
-  width: 75%;
-  opacity: 0.55;
-  position: relative;
 
 }
 
@@ -28,7 +26,8 @@ paper-tabs {
 
 .h-title {
   font-size: 21px;
-  color: black;
+  color: orange;
+  text-align: center;
 }
 .r-title {
  text-shadow: 3px 3px white;
@@ -44,6 +43,7 @@ paper-tabs {
   -webkit-filter: grayscale(100%) blur(1px);
   position: fixed;
   background-image: url("background.jpg");
+  overflow: hidden;
   width: auto;
   height: auto;
   min-width: 100%;
@@ -56,30 +56,27 @@ paper-tabs {
   object-fit: contain;
   transition: 1s opacity;
 }
-
-body:hover .video {
+ paper-input-decorator:focus .video {
   -webkit-filter: grayscale(10%) blur(1px) contrast(85%) brightness(85%);
 }
-
 body:hover .register {
   background: rgba(0,0,0,0.5);
 }
 
-/*body:hover .l-title {
+input::focus .l-title {
   -webkit-filter: grayscale(0%);
-}*/
+}
 .register, .login { 
   -webkit-animation: fadein 4s;
-  position: relative;
+  float: center;
   overflow: hide;
   display: inline-block;
-  width: 35%;
-  height: 40%;
+  width: 45%;
+  height: 60%;
   border: 3px solid white;
   padding: .4rem;
   margin: 1rem auto;
   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
-  font-size: 1.2rem;
   font-weight:100;
   background-color: silver;
   opacity: 0.5; 
@@ -125,8 +122,8 @@ core-pages {
   background-color: white;
 }
 
-core-toolbar#nav {
-    background-color: white;
+.nav-toolbar {
+    background-color: black;
 }
 
 core-header-panel.side {
@@ -152,7 +149,7 @@ core-toolbar {
   background-color: white;
 }
 
-paper-input-decorator /deep/ .focused-underline {
+paper-input-decorator /deep/ .focused-underline, .unfocused-underline {
   background-color: white;
 }
 
@@ -166,3 +163,136 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
    -webkit-box-shadow: 0 0 0px 1000px white inset;
     color: white !important;
 }
+paper-input-decorator[focused] /deep/ .floating-label .label-text {
+    /* floating label color when the input is focused */
+    color: white;
+}
+
+.flow-text {
+  font-weight: 300; }
+  @media only screen and (min-width: 360px) {
+  #flow-text {
+      font-size: 1.2rem; } }
+  @media only screen and (min-width: 0px) {
+  #flow-text {
+      line-height: 0.8rem; } }
+  @media only screen and (min-width: 390px) {
+  #flow-text {
+      font-size: 1.224rem; } }
+  @media only screen and (min-width: 30px) {
+  #flow-text {
+      line-height: 0.904rem; } }
+  @media only screen and (min-width: 420px) {
+  #flow-text {
+      font-size: 1.248rem; } }
+  @media only screen and (min-width: 60px) {
+  #flow-text {
+      line-height: 1.008rem; } }
+  @media only screen and (min-width: 450px) {
+  #flow-text {
+      font-size: 1.272rem; } }
+  @media only screen and (min-width: 90px) {
+  #flow-text {
+      line-height: 1.112rem; } }
+  @media only screen and (min-width: 480px) {
+  #flow-text {
+      font-size: 1.296rem; } }
+  @media only screen and (min-width: 120px) {
+  #flow-text {
+      line-height: 1.216rem; } }
+  @media only screen and (min-width: 510px) {
+  #flow-text {
+      font-size: 1.32rem; } }
+  @media only screen and (min-width: 150px) {
+  #flow-text {
+      line-height: 1.32rem; } }
+  @media only screen and (min-width: 540px) {
+  #flow-text {
+      font-size: 1.344rem; } }
+  @media only screen and (min-width: 180px) {
+  #flow-text {
+      line-height: 1.424rem; } }
+  @media only screen and (min-width: 570px) {
+  #flow-text {
+      font-size: 1.368rem; } }
+  @media only screen and (min-width: 210px) {
+  #flow-text {
+      line-height: 1.528rem; } }
+  @media only screen and (min-width: 600px) {
+  #flow-text {
+      font-size: 1.392rem; } }
+  @media only screen and (min-width: 240px) {
+  #flow-text {
+      line-height: 1.632rem; } }
+  @media only screen and (min-width: 630px) {
+  #flow-text {
+      font-size: 1.416rem; } }
+  @media only screen and (min-width: 270px) {
+  #flow-text {
+      line-height: 1.736rem; } }
+  @media only screen and (min-width: 660px) {
+  #flow-text {
+      font-size: 1.44rem; } }
+  @media only screen and (min-width: 300px) {
+  #flow-text {
+      line-height: 1.84rem; } }
+  @media only screen and (min-width: 690px) {
+  #flow-text {
+      font-size: 1.464rem; } }
+  @media only screen and (min-width: 330px) {
+  #flow-text {
+      line-height: 1.944rem; } }
+  @media only screen and (min-width: 720px) {
+  #flow-text {
+      font-size: 1.488rem; } }
+  @media only screen and (min-width: 360px) {
+  #flow-text {
+      line-height: 2.048rem; } }
+  @media only screen and (min-width: 750px) {
+  #flow-text {
+      font-size: 1.512rem; } }
+  @media only screen and (min-width: 390px) {
+  #flow-text {
+      line-height: 2.152rem; } }
+  @media only screen and (min-width: 780px) {
+  #flow-text {
+      font-size: 1.536rem; } }
+  @media only screen and (min-width: 420px) {
+  #flow-text {
+      line-height: 2.256rem; } }
+  @media only screen and (min-width: 810px) {
+  #flow-text {
+      font-size: 1.56rem; } }
+  @media only screen and (min-width: 450px) {
+  #flow-text {
+      line-height: 2.36rem; } }
+  @media only screen and (min-width: 840px) {
+  #flow-text {
+      font-size: 1.584rem; } }
+  @media only screen and (min-width: 480px) {
+  #flow-text {
+      line-height: 2.464rem; } }
+  @media only screen and (min-width: 870px) {
+  #flow-text {
+      font-size: 1.608rem; } }
+  @media only screen and (min-width: 510px) {
+  #flow-text {
+      line-height: 2.568rem; } }
+  @media only screen and (min-width: 900px) {
+  #flow-text {
+      font-size: 1.632rem; } }
+  @media only screen and (min-width: 540px) {
+  #flow-text {
+      line-height: 2.672rem; } }
+  @media only screen and (min-width: 930px) {
+  #flow-text {
+      font-size: 1.656rem; } }
+  @media only screen and (min-width: 570px) {
+  #flow-text {
+      line-height: 2.776rem; } }
+  @media only screen and (min-width: 960px) {
+  #flow-text {
+      font-size: 1.68rem; } }
+  @media only screen and (min-width: 600px) {
+  #flow-text {
+      line-height: 2.88rem; } }
