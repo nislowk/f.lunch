@@ -1,0 +1,51 @@
+
+<!-- Logged In User View -->
+<template name="homePage">
+<core-drawer-panel>
+  <core-header-panel drawer>
+   <core-toolbar shadow="true" class="nav-toolbar medium-tall">
+        <h1 class="h-title">f.lunch</h1>
+    </core-toolbar>
+    <div>
+    <core-menu selected="0" on-core-select="{{selectAction}}">
+  <core-item icon="settings" label="Settings"></core-item>
+  <core-item icon="dialog" label="Dialog"></core-item>
+  <core-item icon="search" label="Search"></core-item>
+</core-menu>
+    </div>
+  </core-header-panel>
+  <core-header-panel main>
+    <core-toolbar class="main-toolbar medium-tall">
+    <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
+        <paper-tabs selected="{{selected}}">
+            <paper-tab>Create</paper-tab>
+            <paper-tab>Vote</paper-tab>
+            <paper-tab>Order</paper-tab>
+            <paper-tab data-action=sign-out>Logout</paper-tab>
+        </paper-tabs>
+    </core-toolbar>
+
+  <core-animated-pages transitions="cross-fade-all" onclick="reactive();">
+
+ <!--     <section vertical center center-justified style="background:red;">
+        <div>
+          <div>{{> splash}}{{> icon}}</div>
+        </div>
+      </section> -->
+
+      <section vertical center center-justified style="background:blue;">
+        <div>
+          <div>{{> create}}</div>
+       </div>
+      </section>
+
+        <section vertical center center-justified style="background:green;">
+          <div>
+            <div><!--  {{> order}} --> Order Page Placeholder</div>
+        </div>
+      </section>
+
+    </core-animated-pages>
+   </core-header-panel>
+</core-drawer-panel>
+</template>
