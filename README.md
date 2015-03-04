@@ -21,7 +21,7 @@ $ npm install -g bower
 3. Start the Meteor server `meteor`
 4. Web Components should be installed correctly
 
-## Important:
+## Integrating Polymer
 
 ### Including webcomponents.js
 
