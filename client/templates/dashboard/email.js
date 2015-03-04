@@ -1,11 +1,12 @@
- // Creating Mailing Method    
+ // Creating Mailing Method  
+ if (Meteor.isServer) {  
     Meteor.methods({
         'sendMail': function (to, link, name, message) {
          check(to, String);
          check(link, String);
          check(name, String);
          check(message, String);
-        Meteor.setTimeout(function() {
+    
         Email.send({
           //add in dynamic from variable to set equal to current.userId(email);
           from: 'Lunch Run',
@@ -13,9 +14,9 @@
           subject: name + " Has Created A New Lunch Run",
           text: message + " www.example.com/"+ link
         });
-       }, 0);
       }
     });
+};
 
 // Calling Email Method Locally
 if(Meteor.isClient){
