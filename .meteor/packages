@@ -9,9 +9,9 @@ less
 coffeescript
 meteorhacks:inject-initial
 differential:vulcanize
-reactive-var
 meteor-platform
 accounts-password
 fourseven:scss
 mizzao:autocomplete
 iron:router
+reactive-var

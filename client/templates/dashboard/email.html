@@ -3,17 +3,16 @@
 <!-- Hookup Email -->
 <template name="create" >
     <h2 vertical layout center>Create Run</h2>
-        <form class="create" vertical layout center>
+        <form class="create" vertical layout center data-action="email">
             <paper-input-decorator label="Your Name">
-                <input is="core-input" id="name">
+                <input is="core-input" id="runName">
             </paper-input-decorator>
             <paper-input-decorator label="Email">
-                <input is="core-input" id="email">
+                <input is="core-input" id="runEmail">
             </paper-input-decorator>
             <paper-input-decorator label="Message">
-                <textarea id="message"></textarea>
-                  <paper-char-counter class="footer" target="#message"></paper-char-counter>
+                <textarea id="runMessage"></textarea>
             </paper-input-decorator>
-            <paper-button type="submit">Submit</paper-button>
+            <paper-button type="submit" value="createRun">Submit</paper-button>
         </form>
 </template>

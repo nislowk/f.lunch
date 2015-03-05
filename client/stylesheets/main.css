@@ -63,7 +63,7 @@ body:hover .register {
 /*body:hover .l-title {
   -webkit-filter: grayscale(0%);
 }*/
-di-form { 
+form { 
   -webkit-animation: fadein 4s;
   position: relative;
   width: 500px;

@@ -2,7 +2,7 @@
 <template name="signIn">
    <div class="entry" fit layout vertical center center-justified>
     <div class="entry-body">
-    <di-form data-action="sign-in" vertical center-justified layout center>
+    <form id="sign-in" vertical center-justified layout center>
         <h1 class="r-title"> Sign In </h1>
             <paper-input-decorator floatingLabel label="email" labelVisible="false">
                 <input is="core-input" type="email" id="email" required>
@@ -10,8 +10,8 @@
             <paper-input-decorator floatingLabel label="password" labelVisible="false">
                 <input is="core-input" type="password" id="password" required>
             </paper-input-decorator>
-        <paper-button type="submit">Submit</paper-button>
-    </di-form>
+        <paper-button id="login" type="submit">Submit</paper-button>
+    </form>
      </div>
   </div>
 </template>

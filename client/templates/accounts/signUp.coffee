@@ -1,11 +1,13 @@
 Template.signUp.events
-  "submit [data-action=sign-up]": (e) ->
-    $form = $ e.target
-    if $form[0].valid
+  "click #sign-up #register": (e) ->
+    $form = $("#sign-up")
+    console.log($form)
+    if $form[0][0].value
       email = $form.find("#email").val()
-      password = $form.find("#password").val()
+      pass = $form.find("#password").val()
+      console.log('signed up')
 
-      Accounts.createUser email: email, password: password, (error) ->
+     Accounts.createUser email: email, password: password, (error) ->
         if error
           alert("Failed")
         else
