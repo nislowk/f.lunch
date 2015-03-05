@@ -1,6 +1,6 @@
-# f.lunch
+<h1 align="center">f.lunch</h1>
 
-## Installation
+## Installation:
 
 ### Meteor
 ```
@@ -21,7 +21,7 @@ $ npm install -g bower
 3. Start the Meteor server `meteor`
 4. Web Components should be installed correctly
 
-## Integrating Polymer
+## Integrating Polymer:
 
 ### Including webcomponents.js
 
@@ -41,6 +41,6 @@ This is very important because it includes the web components polyfill.
 
 * There are customized polymer overrides in the `client/stylesheets/components` folder
 
-## Deploy Project
+## Deploy Project:
 
 * Run your production deploy command with a `VULCANIZE=true` environment variable. i.e.. `VULCANIZE=true modulus deploy`
