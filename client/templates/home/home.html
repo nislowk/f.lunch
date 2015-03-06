@@ -15,33 +15,21 @@
     </div>
   </core-header-panel>
   <core-header-panel main>
-    <core-toolbar class="main-toolbar medium-tall" shadow="false">
+    <core-toolbar class="main-toolbar medium-tall" shadow="false" bottomJustify="center">
     <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
-        <paper-tabs selected="{{selected}}">
-            <paper-tab>Create</paper-tab>
-            <paper-tab>Vote</paper-tab>
-            <paper-tab>Order</paper-tab>
-            <paper-tab data-action=sign-out>Logout</paper-tab>
+        <paper-tabs selected="{{selected}}" class="bottom fit">
+            <paper-tab><a href="/">Home</a></paper-tab>
+            <paper-tab><a href="/vote">Vote</a></paper-tab>
+            <paper-tab><a href="/order">Order</a></paper-tab>
+            <paper-tab><a href="/sign-out">Logout</a></paper-tab>
         </paper-tabs>
     </core-toolbar>
 
-  <core-animated-pages transitions="cross-fade-all" onclick="reactive();">
+  <core-animated-pages transitions="cross-fade-all">
 
-     <section vertical center center-justified style="background:red;">
-        <div>
-          <div>{{> splash}}</div>
-        </div>
-      </section>
-
-      <section vertical center center-justified style="background:blue;">
-        <div>
-          <div>{{> create}}</div>
-       </div>
-      </section>
-
-        <section vertical center center-justified style="background:green;">
-          <div>
-            <div><!--  {{> order}} --> Order Page Placeholder</div>
+     <section vertical center center-justified class="splash">
+        <div class="splash" vertical center center-justified>
+         {{> yield}}
         </div>
       </section>
 

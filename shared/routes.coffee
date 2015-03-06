@@ -47,6 +47,17 @@ Router.route "/",
   action: ->
     if Meteor.user()
       @layout "homePage"
-      @render "onboarding"
+      @render "splash"
     else
       @redirect "/sign-in"
+
+Router.route "/vote",
+  name: "accounts.vote"
+  template: "create" 
+  controller: "DashboardController"
+
+
+Router.route "/order",
+  name: "accounts.order"
+  template: "order" 
+  controller: "DashboardController"
