@@ -20,7 +20,7 @@ Router.route "/sign-in",
 
 Router.route "/sign-up",
   name: "accounts.signUp"
-  template: "signUp"
+  template: "signUp" 
   controller: "PublicController"
 
 Router.route "/sign-out",

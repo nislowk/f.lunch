@@ -3,8 +3,8 @@
 <template name="homePage">
 <core-drawer-panel>
   <core-header-panel drawer>
-   <core-toolbar shadow="true" class="nav-toolbar medium-tall">
-        <h1 class="h-title">f.lunch</h1>
+   <core-toolbar shadow="true" class="nav-toolbar medium-tall" vertical center-justified layout center>
+        <h2 class="d-title"><span style="visibility: hidden;">|</span><span> F </span>.lunch</h2>
     </core-toolbar>
     <div>
     <core-menu selected="0" on-core-select="{{selectAction}}">
@@ -15,7 +15,7 @@
     </div>
   </core-header-panel>
   <core-header-panel main>
-    <core-toolbar class="main-toolbar medium-tall">
+    <core-toolbar class="main-toolbar medium-tall" shadow="false">
     <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
         <paper-tabs selected="{{selected}}">
             <paper-tab>Create</paper-tab>
@@ -27,11 +27,11 @@
 
   <core-animated-pages transitions="cross-fade-all" onclick="reactive();">
 
- <!--     <section vertical center center-justified style="background:red;">
+     <section vertical center center-justified style="background:red;">
         <div>
-          <div>{{> splash}}{{> icon}}</div>
+          <div>{{> splash}}</div>
         </div>
-      </section> -->
+      </section>
 
       <section vertical center center-justified style="background:blue;">
         <div>

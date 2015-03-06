@@ -31,12 +31,26 @@ paper-tabs {
   font-size: 21px;
   color: white;
 }
+.d-title {
+ font-size: auto;
+ font-family: 'Advent Pro', sans-serif;
+ opacity: 0.85;
+ color: white;
+ text-align: center;
+ position: relative;
+}
+.d-title span {
+  background-color: red;
+  color: white;
+  padding-top: 7px;
+}
+
 .r-title {
   color: white;
 }
 
 .video { 
-  -webkit-filter: saturate(0.3) contrast(1);
+  -webkit-filter: saturate(0.2) contrast(0.9);
   position: fixed;
   background-image: url("media/background.jpg");
   width: auto;
@@ -66,17 +80,25 @@ body:hover .register {
 form { 
   -webkit-animation: fadein 4s;
   position: relative;
-  width: 500px;
-  height: 500px; 
+  width:40vmax;
+  height:40vmax;
   border: 4px solid white;
-  padding: .4rem;
-  margin: 1rem auto;
   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
-  font-size: 1.2rem;
-  font-weight:100;
+  font-size: auto;
   border-radius: 50%;
+  font-size: 1.5vw;
+}
+form::after {
+  content: "";
   background-image: url("textures/texture.png");
-  opacity: 0.45;
+  opacity: 0.40;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 @-webkit-keyframes fadein {
@@ -89,22 +111,31 @@ form {
 
 .l-title {
  -webkit-animation: fadein 5s;
- display: block;
  font-size: 5rem;
- text-transform:lowercase;
  font-family: 'Advent Pro', sans-serif;
  opacity: 0.85;
- color: white;
+ color: black;
  text-align: center;
  position: relative;
-  padding: .4rem;
-  margin: 1rem auto;
+ margin: 0.5rem;
+ width: 100%;
+ padding-top: 0.5rem;
+ text-shadow: 3px 3px 0px white;
+ display: block;
 }
 
-di-form.paper-button, di-form.paper-button {
-  background-color: none;
+.l-title span {
+  background-color: red;
+  padding-top: 15px;
   color: white;
-  border: 3px solid white;
+  text-shadow: none;
+}
+
+form paper-button, .footer paper-button {
+  background-color: none;
+  margin: 1rem;
+  color: white;
+  border: 2px solid white;
   border-radius: 20%;
 }
 
@@ -148,11 +179,12 @@ paper-tabs::shadow #selectionBar {
 }
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
    -webkit-box-shadow: 0 0 0px 1000px white inset;
-    color: white !important;
+    color: white;
+    opacity: 0.75;
 }
 paper-icon-button {
   color: white;
-  text-align: center;
+  position: relative;
 }
 
 .footer {
@@ -161,11 +193,11 @@ paper-icon-button {
   width: 100%;
   right: 0;
   bottom: 0;
-  z-index: -100;
   background-color: black;
   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
   font-size: 1.2rem;
   border-top: 2px solid white;
+  z-index: 1;
 
 }
 .footerWrapper {
@@ -175,4 +207,30 @@ paper-icon-button {
 body:hover .footerWrapper {
     -webkit-animation: fadein 1s;
     display: block;
+}
+
+.footer paper-button {
+  background-color: none;
+  color: white;
+  border: 2px solid white;
+  border-radius: 20%;
+  position: relative;
+
+}
+
+input#email, input#password {
+  color: white;
+}
+div.entry {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+paper-input-decorator /deep/ .label-text {
+  color: white !important;
+}
+
+.splash {
+  max-width: 25%;
 }

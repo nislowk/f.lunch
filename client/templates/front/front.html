@@ -1,11 +1,9 @@
 <template name="frontPage">
-	 <h1 class="l-title">f.Lunch</h1>
+	<div class="front-title">
+	 <h2 class="l-title"><span style="visibility: hidden;">|</span><span> F </span>.lunch</h2>
+	</div>
     <video autoplay  class="video" poster="media/background.jpg" id="bgvid" loop>
         <source src="media/foodVideo.mp4" type="video/mp4">
     </video>
     {{> yield}}
-    {{> yield}}
-  <div class="footerWrapper">
-    {{>footer}}
-   </div>
 </template>
