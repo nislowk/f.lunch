@@ -3,7 +3,7 @@
 <!-- Hookup Email -->
 <template name="create" >
     <h2 vertical layout center>Create Run</h2>
-        <form class="create" vertical layout center data-action="email">
+        <di-form class="create" vertical layout center data-action="email">
             <paper-input-decorator label="Your Name">
                 <input is="core-input" id="runName">
             </paper-input-decorator>
@@ -14,5 +14,5 @@
                 <textarea id="runMessage"></textarea>
             </paper-input-decorator>
             <paper-button type="submit" value="createRun">Submit</paper-button>
-        </form>
+        </di-form>
 </template>

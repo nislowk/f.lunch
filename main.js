@@ -6,18 +6,20 @@ if(Meteor.isServer) {
         
  // Creating Mailing Method    
     Meteor.methods({
-        'newRun': function (to, link, name, message) {
+        'newRun': function (to, link, name, message, html) {
          check(to, String);
          check(link, String);
          check(name, String);
          check(message, String);
+         check(html, String);
+         // check(html, String);
         Meteor.setTimeout(function() {
         Email.send({
           //add in dynamic from variable to set equal to current.userId(email);
           from: name,
           to: to,
           subject: name + " Has Created A New Lunch Run",
-          html: message + " www.example.com/"+ link 
+          html: html,
 
         });
        }, 0);
@@ -35,7 +37,8 @@ Template.create.events({
             var name = template.find('#runName').value;
             var message = template.find('#runMessage').value;
             var link = Random.id([9]);
-        Meteor.call('newRun', to, link, name, message);
+            var html = Blaze.toHTML(Template.emailLayout);
+        Meteor.call('newRun', to, link, name, message, html);
      }
   });
 };
