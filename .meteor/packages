@@ -15,3 +15,5 @@ fourseven:scss
 mizzao:autocomplete
 iron:router
 reactive-var
+multiply:iron-router-progress
+chart:chart

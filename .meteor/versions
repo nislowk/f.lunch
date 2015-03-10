@@ -8,6 +8,7 @@ blaze@2.0.4
 blaze-tools@1.0.2
 boilerplate-generator@1.0.2
 callback-hook@1.0.2
+chart:chart@1.0.1-beta.4
 check@1.0.4
 coffeescript@1.0.5
 dandv:caret-position@2.1.0-3
@@ -47,6 +48,7 @@ minimongo@1.0.6
 mizzao:autocomplete@0.5.1
 mobile-status-bar@1.0.2
 mongo@1.0.11
+multiply:iron-router-progress@1.0.1
 npm-bcrypt@0.7.7
 observe-sequence@1.0.4
 ordered-dict@1.0.2

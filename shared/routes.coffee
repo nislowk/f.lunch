@@ -2,6 +2,8 @@ Router.configure
   autoRender: false
   autoStart: false
 
+Router.configure
+    progressSpinner : false
 
 #
 # Public Routes

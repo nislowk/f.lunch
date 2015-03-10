@@ -1,24 +1,26 @@
 html, body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
+  overflow: scroll !important;
 }
 core-scroll-header-panel {
   height: 100%;
+
 }
 
-core-toolbar {
-  background-color: black;
-  opacity: 0.95;
-  text-align: center;
-}
 paper-tabs {
   color: white;
   height: 75%;
   width: 75%;
-  opacity: 0.55;
+  opacity: 0.75;
   position: relative;
+  font-size: 2vmin;
 
+}
+
+div#mainContainer {
+  height: 100%;
+  width: 100%;
 }
 
 .m-header {
@@ -33,11 +35,13 @@ paper-tabs {
   color: white;
 }
 .d-title {
- font-size: auto;
+ font-size: 3vmin;
+ padding-top: 1.5vmax;
  font-family: 'Advent Pro', sans-serif;
  opacity: 0.85;
  color: white;
  text-align: center;
+ padding-bottom: 1vmax;
  position: relative;
 }
 .d-title span {
@@ -81,13 +85,13 @@ body:hover .register {
 form { 
   -webkit-animation: fadein 4s;
   position: relative;
-  width:40vmax;
-  height:40vmax;
+  width:70vmin;
+  height:70vmin;
   border: 4px solid white;
   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
   font-size: auto;
   border-radius: 50%;
-  font-size: 1.5vw;
+  font-size: 3vmin;
 }
 form::after {
   content: "";
@@ -112,17 +116,17 @@ form::after {
 
 .l-title {
  -webkit-animation: fadein 5s;
- font-size: 5rem;
+ font-size: 10vmin;
  font-family: 'Advent Pro', sans-serif;
  opacity: 0.85;
  color: black;
  text-align: center;
  position: relative;
- margin: 0.5rem;
  width: 100%;
- padding-top: 0.5rem;
+ padding-top: 1vmin;
  text-shadow: 3px 3px 0px white;
  display: block;
+ padding-bottom: 1vmin;
 }
 
 .l-title span {
@@ -140,33 +144,22 @@ form paper-button, .footer paper-button {
   border-radius: 20%;
 }
 
-core-pages {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url("textures/page.png");
-}
-
-core-toolbar.nav-toolbar {
-  background-image: url("textures/header.png");
-  opacity: 0.85;
-  font-family: 'Advent Pro', sans-serif;
-  border-right: 2px solid grey;
-}
-core-scroll-header-panel::shadow #headerBg {
-    background-color: rgba(56,56,56,1);
-    color: white;
-}
-
-core-scroll-header-panel::shadow #condensedHeaderBg {
-  background-color: grey;
-  color: white;
- }   
-
-core-toolbar.main-toolbar {
-      color: black;
-      background-image: url("textures/footer.png");
+    /* background for toolbar when it is at its full size */
+    core-scroll-header-panel::shadow #headerBg {
+      background-image: url("textures/nav.png");
+      text-align: center;
     }
+
+    /* background for toolbar when it is condensed */
+    core-scroll-header-panel::shadow #condensedHeaderBg {
+      background-color: black;
+    }
+
+    core-toolbar {
+      background-color: transparent;
+      text-align: center;
+    }
+
 
 paper-input-decorator /deep/ .focused-underline {
   background-color: white;
@@ -196,7 +189,7 @@ paper-icon-button {
   bottom: 0;
   background-color: black;
   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
-  font-size: 1.2rem;
+  font-size: 3vmin;
   border-top: 2px solid white;
   z-index: 1;
 
@@ -222,11 +215,6 @@ body:hover .footerWrapper {
 input#email, input#password {
   color: white;
 }
-div.entry {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
 
 paper-input-decorator /deep/ .label-text {
   color: white !important;
@@ -235,19 +223,20 @@ paper-input-decorator /deep/ .label-text {
 .splash paper-button{
   max-width: 25%;
   background-color: white;
+  opacity: 0.75;
 }
 
-.splash section, .splash div {
+div .splash {
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: relative;
   text-align: center;
-  font-size: 1vw;
+  font-size: 2vmin;
 
 }
 
-.splash div::after {
-  background-color: grey;
+div .splash::after {
+  background-image: url("textures/paper.png");
   content: "";
   opacity: 0.40;
   top: 0;
@@ -255,5 +244,11 @@ paper-input-decorator /deep/ .label-text {
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -2;
+  z-index: -1;
+}
+
+#iron-router-progress {
+    background-color: black;
+    box-shadow: 0 0 5px black;
+    float: top;
 }

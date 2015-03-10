@@ -1,22 +1,10 @@
 
 <!-- Logged In User View -->
 <template name="homePage">
-<core-drawer-panel>
-  <core-header-panel drawer>
-   <core-toolbar shadow="true" class="nav-toolbar medium-tall" vertical center-justified layout center>
-        <h2 class="d-title"><span style="visibility: hidden;">|</span><span> F </span>.lunch</h2>
-    </core-toolbar>
-    <div>
-    <core-menu selected="0" on-core-select="{{selectAction}}">
-  <core-item icon="settings" label="Settings"></core-item>
-  <core-item icon="dialog" label="Dialog"></core-item>
-  <core-item icon="search" label="Search"></core-item>
-</core-menu>
-    </div>
-  </core-header-panel>
-  <core-header-panel main>
-    <core-toolbar class="main-toolbar medium-tall" shadow="false" bottomJustify="center">
-    <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
+  <core-scroll-header-panel condenses="true" keepCondensedHeader="true">
+    <core-toolbar class="tall" bottomJustify="center" justify="center" middleJustify="center">
+    <!-- <core-icon-button icon="menu" core-drawer-toggle></core-icon-button> -->
+    <h2 class="d-title middle"><span style="visibility: hidden;">|</span><span> F </span>.lunch</h2>
         <paper-tabs selected="{{selected}}" class="bottom fit">
             <paper-tab><a href="/">Home</a></paper-tab>
             <paper-tab><a href="/vote">Vote</a></paper-tab>
@@ -24,16 +12,8 @@
             <paper-tab><a href="/sign-out">Logout</a></paper-tab>
         </paper-tabs>
     </core-toolbar>
-
-  <core-animated-pages transitions="cross-fade-all">
-
-     <section vertical center center-justified class="splash">
-        <div class="splash" vertical center center-justified>
+        <div class="splash">
          {{> yield}}
         </div>
-      </section>
-
-    </core-animated-pages>
-   </core-header-panel>
-</core-drawer-panel>
+   </core-scroll-header-panel>
 </template>
