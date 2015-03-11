@@ -1,0 +1,21 @@
+{
+  "name": "di-elements",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "di-form": "DifferentialWebComponents/di-form#master",
+    "di-button": "DifferentialWebComponents/di-button#master",
+    "di-layout": "DifferentialWebComponents/di-layout#master",
+    "di-icons": "DifferentialWebComponents/di-icons#master"
+  },
+  "homepage": "https://github.com/DifferentialWebComponents/di-elements",
+  "_release": "f11ed77d21",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f11ed77d21a8a9b2ed6406664b8770d73a0ef827"
+  },
+  "_source": "git://github.com/DifferentialWebComponents/di-elements.git",
+  "_target": "*",
+  "_originalSource": "DifferentialWebComponents/di-elements"
+}

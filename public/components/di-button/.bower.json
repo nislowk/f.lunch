@@ -1,0 +1,17 @@
+{
+  "name": "di-button",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.0"
+  },
+  "homepage": "https://github.com/DifferentialWebComponents/di-button",
+  "_release": "d325d7596a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d325d7596a076840e7043e16b253192e979a4b45"
+  },
+  "_source": "git://github.com/DifferentialWebComponents/di-button.git",
+  "_target": "master",
+  "_originalSource": "DifferentialWebComponents/di-button"
+}
