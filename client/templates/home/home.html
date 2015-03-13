@@ -12,8 +12,13 @@
             <paper-tab><a href="/sign-out">Logout</a></paper-tab>
         </paper-tabs>
     </core-toolbar>
-        <div class="splash">
+        <div class="page" vertical center-justified layout center>
+        {{#momentum plugin='slide-height'}}
          {{> yield}}
+        {{/momentum}}
         </div>
    </core-scroll-header-panel>
+   <div class="footerWrapper">
+    {{> footerDashboard}}
+</div>
 </template>
