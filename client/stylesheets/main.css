@@ -1,7 +1,11 @@
 html, body {
   height: 100%;
   margin: 0;
+<<<<<<< HEAD
   background-color: black;
+=======
+  overflow: scroll !important;
+>>>>>>> parent of 0432c16... Design Changes
 }
 core-scroll-header-panel {
   height: 100%;
@@ -21,7 +25,6 @@ div#mainContainer {
   height: 100%;
   width: 100%;
 }
-
 
 .m-header {
   font-size: 21px;
@@ -213,8 +216,8 @@ paper-input-decorator /deep/ .label-text {
   max-width: 25%;
   background-color: white;
   opacity: 0.75;
-  background-color: none;
 }
+<<<<<<< HEAD
 div.entry {
   content: "";
   top: 0;
@@ -222,18 +225,28 @@ div.entry {
   bottom: 0;
   right: 0;
   display: hidden;
-}
+=======
 
-div.page {
-  background-image: url("textures/paper.png");
-  width: auto;
+div .splash {
+  width: 100%;
   height: 100%;
-  left: 5%;
-  right: 5%;
-  position: absolute;
+  position: relative;
   text-align: center;
   font-size: 2vmin;
-  background-color: none;
+
+>>>>>>> parent of 0432c16... Design Changes
+}
+
+div .splash::after {
+  background-image: url("textures/paper.png");
+  content: "";
+  opacity: 0.40;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 #iron-router-progress {

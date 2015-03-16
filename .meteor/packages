@@ -18,5 +18,7 @@ reactive-var
 multiply:iron-router-progress
 chart:chart
 percolate:momentum
+percolate:momentum-iron-router
 percolate:synced-cron
+natestrauser:font-awesome
 meteoric:ionic
