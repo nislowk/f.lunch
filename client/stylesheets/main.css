@@ -1,14 +1,12 @@
 html, body {
   height: 100%;
   margin: 0;
-<<<<<<< HEAD
-  background-color: black;
-=======
   overflow: scroll !important;
->>>>>>> parent of 0432c16... Design Changes
+  background-color: black;
 }
 core-scroll-header-panel {
   height: 100%;
+
 }
 
 paper-tabs {
@@ -25,6 +23,7 @@ div#mainContainer {
   height: 100%;
   width: 100%;
 }
+
 
 .m-header {
   font-size: 21px;
@@ -57,7 +56,7 @@ div#mainContainer {
   color: white;
 }
 
-video#bgvid.video { 
+.video { 
   -webkit-filter: saturate(0.2) contrast(0.9);
   position: fixed;
   background-image: url("media/background.jpg");
@@ -67,13 +66,24 @@ video#bgvid.video {
   min-height: 100%;
   right: 0;
   bottom: 0;
-  z-index: -2;
+  z-index: -100;
   background-color: black;
   background-size: cover;
   object-fit: contain;
   transition: 1s opacity;
 }
 
+body:hover .video {
+ /* -webkit-filter: grayscale(10%) blur(1px) contrast(85%) brightness(85%);*/
+}
+
+body:hover .register {
+  background: rgba(0,0,0,0.5);
+}
+
+/*body:hover .l-title {
+  -webkit-filter: grayscale(0%);
+}*/
 form { 
   -webkit-animation: fadein 4s;
   position: relative;
@@ -103,7 +113,7 @@ form::after {
     25%  {opacity: 0;}
     50%  {opacity: 0.33;}
     75%  {opacity:0.66;}
-    100% {opacity: 1;}
+    100% {background: 1;}
 }
 
 .l-title {
@@ -216,37 +226,22 @@ paper-input-decorator /deep/ .label-text {
   max-width: 25%;
   background-color: white;
   opacity: 0.75;
+  background-color: none;
 }
-<<<<<<< HEAD
-div.entry {
-  content: "";
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: hidden;
-=======
+div.splash {
 
-div .splash {
-  width: 100%;
+}
+
+div.page {
+  background-image: url("textures/paper.png");
+  width: auto;
   height: 100%;
-  position: relative;
+  left: 5%;
+  right: 5%;
+  position: absolute;
   text-align: center;
   font-size: 2vmin;
-
->>>>>>> parent of 0432c16... Design Changes
-}
-
-div .splash::after {
-  background-image: url("textures/paper.png");
-  content: "";
-  opacity: 0.40;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+  background-color: none;
 }
 
 #iron-router-progress {
