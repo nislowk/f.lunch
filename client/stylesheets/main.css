@@ -1,12 +1,10 @@
 html, body {
   height: 100%;
   margin: 0;
-  overflow: scroll !important;
   background-color: black;
 }
 core-scroll-header-panel {
   height: 100%;
-
 }
 
 paper-tabs {
@@ -56,7 +54,7 @@ div#mainContainer {
   color: white;
 }
 
-.video { 
+video#bgvid.video { 
   -webkit-filter: saturate(0.2) contrast(0.9);
   position: fixed;
   background-image: url("media/background.jpg");
@@ -66,24 +64,13 @@ div#mainContainer {
   min-height: 100%;
   right: 0;
   bottom: 0;
-  z-index: -100;
+  z-index: -2;
   background-color: black;
   background-size: cover;
   object-fit: contain;
   transition: 1s opacity;
 }
 
-body:hover .video {
- /* -webkit-filter: grayscale(10%) blur(1px) contrast(85%) brightness(85%);*/
-}
-
-body:hover .register {
-  background: rgba(0,0,0,0.5);
-}
-
-/*body:hover .l-title {
-  -webkit-filter: grayscale(0%);
-}*/
 form { 
   -webkit-animation: fadein 4s;
   position: relative;
@@ -113,7 +100,7 @@ form::after {
     25%  {opacity: 0;}
     50%  {opacity: 0.33;}
     75%  {opacity:0.66;}
-    100% {background: 1;}
+    100% {opacity: 1;}
 }
 
 .l-title {
@@ -228,8 +215,13 @@ paper-input-decorator /deep/ .label-text {
   opacity: 0.75;
   background-color: none;
 }
-div.splash {
-
+div.entry {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: hidden;
 }
 
 div.page {
