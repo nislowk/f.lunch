@@ -55,7 +55,7 @@ div#mainContainer {
 }
 
 .video { 
-  -webkit-filter: saturate(0.2) contrast(0.9);
+  -webkit-filter: saturate(0.1) contrast(0.9);
   position: fixed;
   background-image: url("media/background.jpg");
   width: auto;
@@ -71,47 +71,60 @@ div#mainContainer {
   transition: 1s opacity;
 }
 
-body:hover .video {
- /* -webkit-filter: grayscale(10%) blur(1px) contrast(85%) brightness(85%);*/
-}
-
-body:hover .register {
-  background: rgba(0,0,0,0.5);
-}
-
-/*body:hover .l-title {
-  -webkit-filter: grayscale(0%);
-}*/
 form { 
   -webkit-animation: fadein 4s;
   position: relative;
   width:70vmin;
   height:70vmin;
-  border: 4px solid white;
   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
   font-size: auto;
   border-radius: 50%;
   font-size: 3vmin;
+  z-index: 2;
 }
-form::after {
+
+form:after {
   content: "";
-  background-image: url("textures/texture.png");
-  opacity: 0.40;
+  opacity: 0.50;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
   border-radius: 50%;
+  border: 4px solid white;
   z-index: -1;
+}
+
+form:before {
+  box-shadow: 0 0 0 100vmax black;
+  position: absolute;
+  content: "";
+  width: 70vmin;
+  height: 70vmin;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.45;
+  z-index: -2;
+}
+
+form:hover:after {
+  background-image: url("textures/texture.png");
+}
+
+form:hover:before {
+  opacity: 0;
 }
 
 @-webkit-keyframes fadein {
     0%   {opacity: 0;}
-    25%  {opacity: 0;}
-    50%  {opacity: 0.33;}
-    75%  {opacity:0.66;}
-    100% {background: 1;}
+    25%  {opacity: 0.25;}
+    50%  {opacity: 0.50;}
+    75%  {opacity:0.75;}
+    100% {opacity: 1;}
 }
 
 .l-title {
@@ -127,6 +140,7 @@ form::after {
  text-shadow: 3px 3px 0px white;
  display: block;
  padding-bottom: 1vmin;
+ z-index: 3;
 }
 
 .l-title span {
@@ -191,7 +205,7 @@ paper-icon-button {
   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
   font-size: 3vmin;
   border-top: 2px solid white;
-  z-index: 1;
+  z-index: 2;
 
 }
 .footerWrapper {
@@ -251,4 +265,51 @@ div .splash::after {
     background-color: black;
     box-shadow: 0 0 5px black;
     float: top;
+}
+
+ .list {
+  display: block;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  color: black;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list > * {
+  width: 50vw;
+  padding: 0 20px;
+  border-bottom: 1px solid #ccc;
+  height: 15vmin;
+}
+
+.list > *.core-selected {
+  opacity: 0.5;
+}
+
+li.core-selected:after {
+  content: "\2713";
+  position: absolute;
+  padding-left: 10px;
+}
+
+.viva {
+  background-image: url("media/viva.jpeg");
+}
+
+.osaka {
+  background-image: url("media/osaka.jpg");
+}
+
+.haymarket {
+  background-image: url("media/haymarket.jpg");
+}
+
+.sip {
+  background-image: url("media/sip.jpg");
+}
+
+.bueno {
+  background-image: url("media/bueno.jpg");
 }

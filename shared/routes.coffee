@@ -61,5 +61,5 @@ Router.route "/vote",
 
 Router.route "/order",
   name: "accounts.order"
-  template: "order" 
+  template: "vote" 
   controller: "DashboardController"
