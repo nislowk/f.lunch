@@ -1,0 +1,22 @@
+<template name="order">
+  <div class="container">
+      <h1>Orders</h1>
+      {{#if currentUser}}
+        <form class="new-task">
+          <input type="text" name="text" placeholder="Type to add new order" />
+        </form>
+      {{/if}}
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="task">
+  <li>
+ <span class="text"><strong>{{username}}</strong> - {{text}}</span>
+  </li>
+</template>

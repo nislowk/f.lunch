@@ -55,11 +55,11 @@ Router.route "/",
 
 Router.route "/vote",
   name: "accounts.vote"
-  template: "create" 
+  template: "vote" 
   controller: "DashboardController"
 
 
 Router.route "/order",
   name: "accounts.order"
-  template: "vote" 
+  template: "order" 
   controller: "DashboardController"

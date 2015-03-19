@@ -1,22 +1,20 @@
 <template name="vote">
 	<polymer-element name="selector-examples">
 	   <h1>Vote</h1>
-      <core-selector class="list" selected="{{multiSelected}}" valueattr="value" multi vertical layout center> 
+      <core-selector class="list" selected="{{color}}" valueattr="value"  activateEvent="change" multi vertical layout center> 
         <div name="vote" value="Osaka" class="osaka"><h1>Osaka</h1></div>
         <div name="vote" value="Bueno" class="bueno"><h1>Bueno</h1></div>
         <div name="vote" value="Sip" class="sip"><h1>Sip</h1></div>
         <div name="vote" value="Viva" class="viva"><h1>Viva</h1></div>
         <div name="vote" value="Haymarket" class="haymarket"><h1>Haymarket</h1></div>
+        <h2>vote = {{vote}}</h2>
       </core-selector>
 
-
-<h2>vote = {{vote}}</h2>
 
 <script>
       Polymer('selector-examples', {
         ready: function() {
-          this.multiSelected = [1, 3];
-          this.vote = ('core-selected').val();
+          this.vote = 'Osaka';
         }
       });
     </script>

@@ -12,7 +12,6 @@ if(Meteor.isServer) {
          check(name, String);
          check(message, String);
          check(html, String);
-         // check(html, String);
         Meteor.setTimeout(function() {
         Email.send({
           //add in dynamic from variable to set equal to current.userId(email);
@@ -42,3 +41,39 @@ Template.create.events({
      }
   });
 };
+
+Tasks = new Mongo.Collection("tasks");
+
+if (Meteor.isClient) {
+  // This code only runs on the client
+  Meteor.subscribe("tasks");
+
+  Template.order.events({
+    'submit .new-task': function (event) {
+      // This function is called when the new task form is submitted
+      var text = event.target.text.value;
+
+      Meteor.call("addTask", text);
+
+      // Clear form
+      event.target.text.value = "";
+
+      // Prevent default form submit
+      return false;
+    },
+  });
+ };
+
+ Meteor.methods({
+  'addTask': function (text) {
+
+    Tasks.insert({
+      text: text,
+      createdAt: new Date(),
+    });
+  },
+});
+
+if (Meteor.isServer) {
+  Meteor.publish("tasks");
+ };
