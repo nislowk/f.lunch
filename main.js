@@ -47,30 +47,39 @@ Tasks = new Mongo.Collection("tasks");
 if (Meteor.isClient) {
   // This code only runs on the client
   Meteor.subscribe("tasks");
+console.log("-1");
 
   Template.order.events({
-    'submit .new-task': function (event) {
+    'submit .new-task': function (event, template) {
       // This function is called when the new task form is submitted
-      var text = event.target.text.value;
+      var text = template.find('#text').value;
+  console.log("0");
 
-      Meteor.call("addTask", text);
+      Meteor.call('addTask', text);
+
+console.log("1");
 
       // Clear form
-      event.target.text.value = "";
+       event.preventDefault();
+console.log("2");
 
       // Prevent default form submit
       return false;
+console.log("3");
     },
   });
  };
 
  Meteor.methods({
   'addTask': function (text) {
+      check(text, String);
+    console.log("4");
 
     Tasks.insert({
       text: text,
       createdAt: new Date(),
     });
+     console.log("5");
   },
 });
 
