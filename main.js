@@ -41,6 +41,8 @@ Template.create.events({
      }
   });
 };
+<<<<<<< HEAD
+=======
 
 Tasks = new Mongo.Collection("tasks");
 
@@ -86,3 +88,7 @@ console.log("3");
 if (Meteor.isServer) {
   Meteor.publish("tasks");
  };
+<<<<<<< Updated upstream
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes

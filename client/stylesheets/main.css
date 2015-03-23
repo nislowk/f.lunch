@@ -1,7 +1,6 @@
 html, body {
   height: 100%;
   margin: 0;
-  overflow: scroll !important;
 }
 core-scroll-header-panel {
   height: 100%;
