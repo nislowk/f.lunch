@@ -4,7 +4,7 @@ Template.signUp.events
     console.log($form)
     if $form[0][0].value
       email = $form.find("#email").val()
-      pass = $form.find("#password").val()
+      password = $form.find("#password").val()
       console.log('signed up')
 
      Accounts.createUser email: email, password: password, (error) ->

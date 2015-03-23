@@ -4,9 +4,9 @@ Template.signIn.events
     console.log($form)
     if $form[0][0].value
       email = $form.find("#email").val()
-      pass = $form.find("#password").val()
+      password = $form.find("#password").val()
       console.log('signed in')
-      Meteor.loginWithPassword email, pass, (error) ->
+      Meteor.loginWithPassword email, password, (error) ->
         if error
           alert("Failed")
         else
