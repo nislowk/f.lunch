@@ -62,7 +62,7 @@ div#mainContainer {
   min-height: 100%;
   right: 0;
   bottom: 0;
-  z-index: -100;
+  z-index: -3;
   background-size: cover;
   object-fit: contain;
   transition: 1s opacity;
@@ -82,21 +82,25 @@ form {
 }
 
 form:after {
+  -webkit-animation:after-opacity ease 1s;
+  background-image: url("textures/texture.png");
   content: "";
-  opacity: 0.50;
+  width: 70vmin;
+  height: 70vmin;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  opacity: 0.75;
   position: absolute;
   border-radius: 50%;
   z-index: -1;
 }
 
 form:before {
-  /*-webkit-box-shadow: 0 0 0 100vmax black;*/
-  -webkit-animation:form-shadow ease-in 2s;
+  -webkit-animation:after-shadow ease 1s;
   position: absolute;
+  background: none;
   content: "";
   width: 70vmin;
   height: 70vmin;
@@ -105,13 +109,13 @@ form:before {
   left: 0;
   bottom: 0;
   right: 0;
-  opacity: 0.45;
+  opacity: 0.75;
   z-index: -2;
 }
 
- @-webkit-keyframes form-shadow {
+ @-webkit-keyframes before-shadow {
     0% {
-        -webkit-box-shadow: none;
+        -webkit-box-shadow: 0 0 0 0 black;
     }
     33% {
         -webkit-box-shadow: 0 0 0 33vmax black;
@@ -124,17 +128,75 @@ form:before {
     }
   }
 
-form:hover:after {
-  background-image: url("textures/texture.png");
- /* -webkit-animation:form-shadow ease-in 2s;*/
-}
+ @-webkit-keyframes after-shadow {
+    100% {
+        -webkit-box-shadow: 0 0 0 0 black;
+    }
+    66% {
+        -webkit-box-shadow: 0 0 0 33vmax black;
+    }
+     33% {
+        -webkit-box-shadow: 0 0 0 66vmax black;
+    }
+     0% {
+        -webkit-box-shadow: 0 0 0 100vmax black;
+    }
+  }
 
+ @-webkit-keyframes after-opacity {
+    100% {
+          opacity: 0.6;
+    }
+    66% {
+        opacity: 0.4;
+    }
+     33% {
+        opacity: 0.2;
+    }
+     0% {
+        opacity: 0.0;
+    }
+  }
 form:hover:before {
-  opacity: 0;
+   -webkit-animation:before-shadow ease 1s;
+   -webkit-box-shadow: 0 0 0 100vmax black;
 }
 
-body:hover form:after {
-  -webkit-animation:form-shadow ease-in 2s;
+form:hover:after {
+  -webkit-animation:after-opacity ease 1s;
+  background: none;
+  border: 4px solid white;
+  opacity: 0.6;
+}
+
+form:hover .r-title {
+  color: black;
+  text-shadow: 3px 3px 1px white;
+}
+form:hover paper-input-decorator /deep/ .label-text, paper-input-decorator /deep/ ::-webkit-input-placeholder{
+  color: grey !important;
+}
+
+form:hover paper-button#login {
+  border: 4px solid black;
+  border-radius: 40%;
+  color: black;
+  background-color: none;
+  margin: 1rem;
+}
+
+form:hover input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+   -webkit-box-shadow: 0 0 0px 1000px grey inset;
+    color: black;
+    opacity: 0.75;
+}
+
+form:hover paper-input-decorator /deep/ .focused-underline {
+  background-color: black;
+}
+
+form:hover input#email, input#password{
+  color: black;
 }
 
 @-webkit-keyframes fadein {
@@ -246,10 +308,6 @@ body:hover .footerWrapper {
 
 input#email, input#password {
   color: white;
-}
-
-paper-input-decorator /deep/ .label-text {
-  color: white !important;
 }
 
 .splash paper-button{
