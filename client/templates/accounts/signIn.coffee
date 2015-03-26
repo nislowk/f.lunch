@@ -1,4 +1,4 @@
-Template.signIn.events
+ Template.signIn.events 
   "click #sign-in #login": (e) ->
     $form = $("#sign-in")
     console.log($form)

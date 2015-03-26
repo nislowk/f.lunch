@@ -23,3 +23,6 @@ percolate:synced-cron
 natestrauser:font-awesome
 meteoric:ionic
 force-ssl
+accounts-google
+service-configuration
+accounts-ui
