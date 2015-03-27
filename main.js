@@ -42,6 +42,8 @@ Template.create.events({
   });
 };
 
+Accounts.config({ restrictCreationByEmailDomain: 'fuzzproductions.com' })
+
 
 // Tasks = new Mongo.Collection("tasks");
 

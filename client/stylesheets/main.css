@@ -83,7 +83,7 @@ form {
 
 form:after {
   -webkit-animation:after-opacity ease 1s;
-  background-image: url("textures/texture.png");
+  background-color: black;
   content: "";
   width: 70vmin;
   height: 70vmin;
@@ -113,50 +113,51 @@ form:before {
   z-index: -2;
 }
 
- @-webkit-keyframes before-shadow {
-    0% {
-        -webkit-box-shadow: 0 0 0 0 black;
-    }
-    33% {
-        -webkit-box-shadow: 0 0 0 33vmax black;
-    }
-     66% {
-        -webkit-box-shadow: 0 0 0 66vmax black;
-    }
-     100% {
-        -webkit-box-shadow: 0 0 0 100vmax black;
-    }
-  }
+@-webkit-keyframes before-shadow {
+0% {
+    -webkit-box-shadow: 0 0 0 0 black;
+}
+33% {
+    -webkit-box-shadow: 0 0 0 33vmax black;
+}
+ 66% {
+    -webkit-box-shadow: 0 0 0 66vmax black;
+}
+ 100% {
+    -webkit-box-shadow: 0 0 0 100vmax black;
+}
+}
 
- @-webkit-keyframes after-shadow {
-    100% {
-        -webkit-box-shadow: 0 0 0 0 black;
-    }
-    66% {
-        -webkit-box-shadow: 0 0 0 33vmax black;
-    }
-     33% {
-        -webkit-box-shadow: 0 0 0 66vmax black;
-    }
-     0% {
-        -webkit-box-shadow: 0 0 0 100vmax black;
-    }
-  }
+@-webkit-keyframes after-shadow {
+100% {
+    -webkit-box-shadow: 0 0 0 0 black;
+}
+66% {
+    -webkit-box-shadow: 0 0 0 33vmax black;
+}
+ 33% {
+    -webkit-box-shadow: 0 0 0 66vmax black;
+}
+ 0% {
+    -webkit-box-shadow: 0 0 0 100vmax black;
+}
+}
 
- @-webkit-keyframes after-opacity {
-    100% {
-          opacity: 0.6;
-    }
-    66% {
-        opacity: 0.4;
-    }
-     33% {
-        opacity: 0.2;
-    }
-     0% {
-        opacity: 0.0;
-    }
-  }
+@-webkit-keyframes after-opacity {
+100% {
+      opacity: 0.6;
+}
+66% {
+    opacity: 0.4;
+}
+ 33% {
+    opacity: 0.2;
+}
+ 0% {
+    opacity: 0.0;
+}
+}
+
 form:hover:before {
    -webkit-animation:before-shadow ease 1s;
    -webkit-box-shadow: 0 0 0 100vmax black;
@@ -165,7 +166,6 @@ form:hover:before {
 form:hover:after {
   -webkit-animation:after-opacity ease 1s;
   background: none;
-  border: 4px solid white;
   opacity: 0.6;
 }
 
@@ -238,21 +238,21 @@ form paper-button, .footer paper-button {
   border-radius: 20%;
 }
 
-    /* background for toolbar when it is at its full size */
-    core-scroll-header-panel::shadow #headerBg {
-      background-image: url("textures/nav.png");
-      text-align: center;
-    }
+/* background for toolbar when it is at its full size */
+core-scroll-header-panel::shadow #headerBg {
+  background-image: url("textures/nav.png");
+  text-align: center;
+}
 
-    /* background for toolbar when it is condensed */
-    core-scroll-header-panel::shadow #condensedHeaderBg {
-      background-color: black;
-    }
+/* background for toolbar when it is condensed */
+core-scroll-header-panel::shadow #condensedHeaderBg {
+  background-color: black;
+}
 
-    core-toolbar {
-      background-color: transparent;
-      text-align: center;
-    }
+core-toolbar {
+  background-color: transparent;
+  text-align: center;
+}
 
 
 paper-input-decorator /deep/ .focused-underline {
