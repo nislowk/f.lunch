@@ -42,52 +42,51 @@ Template.create.events({
   });
 };
 
-
 Accounts.config({ restrictCreationByEmailDomain:('fuzzproductions.com', 'fuzzpro.com')})
 
 
-// Tasks = new Mongo.Collection("tasks");
+Tasks = new Mongo.Collection("tasks");
 
-// if (Meteor.isClient) {
-//   // This code only runs on the client
-//   Meteor.subscribe("tasks");
-// console.log("-1");
+if (Meteor.isClient) {
+  // This code only runs on the client
+  Meteor.subscribe("tasks");
+console.log("-1");
 
-//   Template.order.events({
-//     'submit .new-task': function (event, template) {
-//       // This function is called when the new task form is submitted
-//       var text = template.find('#text').value;
-//   console.log("0");
+  Template.order.events({
+    'submit .new-task': function (event, template) {
+      // This function is called when the new task form is submitted
+      var text = template.find('#text').value;
+  console.log("0");
 
-//       Meteor.call('addTask', text);
+      Meteor.call('addTask', text);
 
-// console.log("1");
+console.log("1");
 
-//       // Clear form
-//        event.preventDefault();
-// console.log("2");
+      // Clear form
+       event.preventDefault();
+console.log("2");
 
-//       // Prevent default form submit
-//       return false;
-// console.log("3");
-//     },
-//   });
-//  };
+      // Prevent default form submit
+      return false;
+console.log("3");
+    },
+  });
+ };
 
-//  Meteor.methods({
-//   'addTask': function (text) {
-//       check(text, String);
-//     console.log("4");
+ Meteor.methods({
+  'addTask': function (text) {
+      check(text, String);
+    console.log("4");
 
-//     Tasks.insert({
-//       text: text,
-//       createdAt: new Date(),
-//     });
-//      console.log("5");
-//   },
-// });
+    Tasks.insert({
+      text: text,
+      createdAt: new Date(),
+    });
+     console.log("5");
+  },
+});
 
-// if (Meteor.isServer) {
-//   Meteor.publish("tasks");
-//  };
+if (Meteor.isServer) {
+  Meteor.publish("tasks");
+ };
 
