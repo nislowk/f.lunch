@@ -40,6 +40,8 @@ if (Meteor.isClient) {
       Meteor.call('newRun', to, link, name, message, html);
     }
   });
+};
+
 
   Accounts.config({ restrictCreationByEmailDomain: 'fuzzproductions.com' });
   Requests = new Mongo.Collection("yelp");
