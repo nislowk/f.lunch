@@ -13,80 +13,41 @@ if(Meteor.isServer) {
          check(message, String);
          check(html, String);
         Meteor.setTimeout(function() {
-        Email.send({
-          //add in dynamic from variable to set equal to current.userId(email);
-          from: name,
-          to: to,
-          subject: name + " Has Created A New Lunch Run",
-          html: html,
+          Email.send({
+            //add in dynamic from variable to set equal to current.userId(email);
+            from: name,
+            to: to,
+            subject: name + " Has Created A New Lunch Run",
+            html: html,
 
-        });
-       }, 0);
+          });
+        }, 0);
       }
     });
   })
 };
 
 // Calling Email Method Locally
-if(Meteor.isClient){
-Template.create.events({
+if (Meteor.isClient) {
+  Template.create.events({
     'click .create paper-button': function(event, template){
-        event.preventDefault();
-            var to = template.find('#runEmail').value;
-            var name = template.find('#runName').value;
-            var message = template.find('#runMessage').value;
-            var link = Random.id([9]);
-            var html = Blaze.toHTML(Template.emailLayout);
-        Meteor.call('newRun', to, link, name, message, html);
-     }
+      event.preventDefault();
+      var to = template.find('#runEmail').value;
+      var name = template.find('#runName').value;
+      var message = template.find('#runMessage').value;
+      var link = Random.id([9]);
+      var html = Blaze.toHTML(Template.emailLayout);
+      Meteor.call('newRun', to, link, name, message, html);
+    }
   });
+
+  Accounts.config({ restrictCreationByEmailDomain: 'fuzzproductions.com' });
+  Requests = new Mongo.Collection("yelp");
+
+  // This code only runs on the client
+  Template.frontPage.requests = function () {
+    return Requests.find({});
+  };
 };
 
-Accounts.config({ restrictCreationByEmailDomain: 'fuzzproductions.com' })
-
-
-// Tasks = new Mongo.Collection("tasks");
-
-// if (Meteor.isClient) {
-//   // This code only runs on the client
-//   Meteor.subscribe("tasks");
-// console.log("-1");
-
-//   Template.order.events({
-//     'submit .new-task': function (event, template) {
-//       // This function is called when the new task form is submitted
-//       var text = template.find('#text').value;
-//   console.log("0");
-
-//       Meteor.call('addTask', text);
-
-// console.log("1");
-
-//       // Clear form
-//        event.preventDefault();
-// console.log("2");
-
-//       // Prevent default form submit
-//       return false;
-// console.log("3");
-//     },
-//   });
-//  };
-
-//  Meteor.methods({
-//   'addTask': function (text) {
-//       check(text, String);
-//     console.log("4");
-
-//     Tasks.insert({
-//       text: text,
-//       createdAt: new Date(),
-//     });
-//      console.log("5");
-//   },
-// });
-
-// if (Meteor.isServer) {
-//   Meteor.publish("tasks");
-//  };
 
