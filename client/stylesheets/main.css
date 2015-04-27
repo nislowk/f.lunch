@@ -54,7 +54,7 @@ div#mainContainer {
   text-shadow: 3px 3px 1px black;
 }
 
-.video { 
+video#l-video { 
   position: fixed;
   width: auto;
   height: auto;
