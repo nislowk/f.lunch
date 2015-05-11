@@ -41,35 +41,3 @@ if (Meteor.isClient) {
     }
   });
 };
-
-<<<<<<< HEAD
-// Accounts.config({ restrictCreationByEmailDomain:('fuzzproductions.com', 'fuzzpro.com')})
-
-
-// Tasks = new Mongo.Collection("tasks");
-
-// if (Meteor.isClient) {
-//   // This code only runs on the client
-//   Meteor.subscribe("tasks");
-// console.log("-1");
-
-//   Template.order.events({
-//     'submit .new-task': function (event, template) {
-//       // This function is called when the new task form is submitted
-//       var text = template.find('#text').value;
-//   console.log("0");
-
-//       Meteor.call('addTask', text);
-=======
-
-  Accounts.config({ restrictCreationByEmailDomain: 'fuzzproductions.com' });
-  Requests = new Mongo.Collection("yelp");
->>>>>>> origin/master
-
-  // This code only runs on the client
-  Template.frontPage.requests = function () {
-    return Requests.find({});
-  };
-};
-
-
