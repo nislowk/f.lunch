@@ -1,10 +1,10 @@
 // ** Setup customer.io email for automation
-// Setting Mail Server Envirnonment 
-if(Meteor.isServer) {
-    Meteor.startup(function () { 
+// Setting Mail Server Envirnonment
+if (Meteor.isServer) {
+    Meteor.startup(function () {
         process.env.MAIL_URL="smtp://postmaster@sandbox8d20ea80bc064e46972ebf28519f4878.mailgun.org:a7eca4393d76154f0b9fa0d55f6cba4a@smtp.mailgun.org:465/";
-        
- // Creating Mailing Method    
+
+ // Creating Mailing Method
     Meteor.methods({
         'newRun': function (to, link, name, message, html) {
          check(to, String);

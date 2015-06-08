@@ -1,4 +1,3 @@
-
 ServiceConfiguration.configurations.remove({
   service: "google"
 });
@@ -16,4 +15,3 @@ ServiceConfiguration.configurations.insert({
   accessToken: "OcX96csmKNaaO3vCWrrQAOxCXlI8GDgZ",
   accessTokenSecret: "rVJiFXbsPKhxn-GX7FHJgwIANwY"
 });
-

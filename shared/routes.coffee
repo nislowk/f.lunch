@@ -9,7 +9,7 @@ Router.configure
 # Public Routes
 #
 @PublicController = RouteController.extend
-  layoutTemplate: "l-main"
+  layoutTemplate: "main"
 
 Router.route "/about",
   controller: "PublicController"
@@ -21,7 +21,7 @@ Router.route "/sign-in",
 
 Router.route "/sign-up",
   name: "accounts.signUp"
-  template: "signUp" 
+  template: "signUp"
   controller: "PublicController"
 
 Router.route "/sign-out",
@@ -34,7 +34,7 @@ Router.route "/sign-out",
 #
 @DashboardController = RouteController.extend
   layoutTemplate: "homePage"
-  
+
   onBeforeAction: ->
     if Meteor.loggingIn()
       @render "loading"
@@ -54,11 +54,11 @@ Router.route "/",
 
 Router.route "/vote",
   name: "accounts.vote"
-  template: "vote" 
+  template: "vote"
   controller: "DashboardController"
 
 
 Router.route "/order",
   name: "accounts.order"
-  template: "order" 
+  template: "order"
   controller: "DashboardController"
